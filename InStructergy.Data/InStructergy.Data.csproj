@@ -54,7 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IdentityModels.cs" />
+    <Compile Include="EntityModels\Course.cs" />
+    <Compile Include="EntityModels\File.cs" />
+    <Compile Include="EntityModels\Post.cs" />
+    <Compile Include="EntityModels\Student.cs" />
+    <Compile Include="EntityModels\IdentityModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
