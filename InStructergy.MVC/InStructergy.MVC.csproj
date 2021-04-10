@@ -176,6 +176,7 @@
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -345,6 +346,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Properties\" />
+    <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -355,6 +357,10 @@
     <ProjectReference Include="..\InStructergy.Data\InStructergy.Data.csproj">
       <Project>{918C051C-AE35-4D0D-829B-41AAAE4CB436}</Project>
       <Name>InStructergy.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InStructergy.Models\InStructergy.Models.csproj">
+      <Project>{E289CCC7-CE34-4FBF-B337-F11B1B73368D}</Project>
+      <Name>InStructergy.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
