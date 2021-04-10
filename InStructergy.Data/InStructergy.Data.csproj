@@ -59,6 +59,15 @@
     <Compile Include="EntityModels\Post.cs" />
     <Compile Include="EntityModels\Student.cs" />
     <Compile Include="EntityModels\IdentityModels.cs" />
+    <Compile Include="Migrations\202104101115098_InitialCreate.cs" />
+    <Compile Include="Migrations\202104101115098_InitialCreate.Designer.cs">
+      <DependentUpon>202104101115098_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104101118565_initial_migration.cs" />
+    <Compile Include="Migrations\202104101118565_initial_migration.Designer.cs">
+      <DependentUpon>202104101118565_initial_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -66,6 +75,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104101115098_InitialCreate.resx">
+      <DependentUpon>202104101115098_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104101118565_initial_migration.resx">
+      <DependentUpon>202104101118565_initial_migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

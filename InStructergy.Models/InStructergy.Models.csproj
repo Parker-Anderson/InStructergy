@@ -60,5 +60,14 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="RoleViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InStructergy.Data\InStructergy.Data.csproj">
+      <Project>{918C051C-AE35-4D0D-829B-41AAAE4CB436}</Project>
+      <Name>InStructergy.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
