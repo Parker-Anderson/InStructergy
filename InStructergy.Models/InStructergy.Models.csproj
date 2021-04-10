@@ -64,6 +64,8 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CourseCreate.cs" />
+    <Compile Include="CourseListItem.cs" />
     <Compile Include="RoleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
