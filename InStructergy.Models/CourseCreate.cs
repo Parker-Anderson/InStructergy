@@ -12,9 +12,10 @@ namespace InStructergy.Models
     {
         [Required]
         public string Name { get; set; }
-        [Required]
+        
         public string InstructorId { get; set; }
         //constraints on the Students property can be set here through annotation.
+        
         public List<Student> Students { get; set; }
     }
 }

@@ -10,11 +10,11 @@ namespace InStructergy.Models
 {
     public class CourseListItem
     {
-        [Key]
+        
         public int Id { get; set; }
         public string Name { get; set; }
         
-        [Display(Name = "Students Enrolled")]
-        public List<Student> Students { get; set; }
+        //[Display(Name = "Students Enrolled")]
+       // public List<Student> Students { get; set; } - needed in List Item Model?
     }
 }
