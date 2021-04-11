@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace InStructergy.MVC.Controllers
 {
-    [Authorize(Roles = "Admin,Instructor")]
+    [Authorize]
     public class CourseController : Controller
     {
         // GET: Course
@@ -21,10 +21,7 @@ namespace InStructergy.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CourseCreate model)
         {
-            if (!ModelState.IsValid)
-            {
-
-            }
+    
             return View(model);
         }
     }
