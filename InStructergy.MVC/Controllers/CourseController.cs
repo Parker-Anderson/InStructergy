@@ -1,4 +1,6 @@
 ﻿using InStructergy.Models;
+using InStructergy.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +15,11 @@ namespace InStructergy.MVC.Controllers
         // GET: Course
         public ActionResult Index()
         {
-            var model = new CourseListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CourseService(userId);
+            var model = service.GetCourses();
             return View(model);
+   
         }
         //GET
         public ActionResult Create()
@@ -27,10 +32,13 @@ namespace InStructergy.MVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-    
-            return View(model);
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CourseService(userId);
+            service.CreateCourse(model);
+            return RedirectToAction("Index");
+            
         }
     }
 }
