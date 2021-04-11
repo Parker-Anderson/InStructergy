@@ -15,12 +15,19 @@ namespace InStructergy.MVC.Controllers
         // GET: Course
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CourseService(userId);
+            var service = CreateCourseService();
             var model = service.GetCourses();
             return View(model);
-   
+
         }
+
+        private CourseService CreateCourseService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CourseService(userId);
+            return service;
+        }
+
         //GET
         public ActionResult Create()
         {
@@ -34,8 +41,7 @@ namespace InStructergy.MVC.Controllers
             {
                 return View(model);
             }
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new CourseService(userId);
+            var service = CreateCourseService();
             service.CreateCourse(model);
             return RedirectToAction("Index");
             

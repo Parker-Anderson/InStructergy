@@ -70,6 +70,14 @@
     <Compile Include="Migrations\202104101118565_initial_migration.Designer.cs">
       <DependentUpon>202104101118565_initial_migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104111856514_Migration_2.cs" />
+    <Compile Include="Migrations\202104111856514_Migration_2.designer.cs">
+      <DependentUpon>202104111856514_Migration_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104111911511_Migration_3.cs" />
+    <Compile Include="Migrations\202104111911511_Migration_3.designer.cs">
+      <DependentUpon>202104111911511_Migration_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +93,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104101118565_initial_migration.resx">
       <DependentUpon>202104101118565_initial_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104111856514_Migration_2.resx">
+      <DependentUpon>202104111856514_Migration_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104111911511_Migration_3.resx">
+      <DependentUpon>202104111911511_Migration_3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

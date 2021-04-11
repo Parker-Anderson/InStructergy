@@ -63,6 +63,19 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CourseService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InStructergy.Data\InStructergy.Data.csproj">
+      <Project>{918c051c-ae35-4d0d-829b-41aaae4cb436}</Project>
+      <Name>InStructergy.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InStructergy.Models\InStructergy.Models.csproj">
+      <Project>{e289ccc7-ce34-4fbf-b337-f11b1b73368d}</Project>
+      <Name>InStructergy.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

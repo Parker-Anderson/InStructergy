@@ -363,6 +363,10 @@
       <Project>{E289CCC7-CE34-4FBF-B337-F11B1B73368D}</Project>
       <Name>InStructergy.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\InStructergy.Services\InStructergy.Services.csproj">
+      <Project>{ae3b321e-9104-4fee-a306-982e46e77877}</Project>
+      <Name>InStructergy.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

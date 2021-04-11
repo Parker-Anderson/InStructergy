@@ -22,7 +22,6 @@ namespace InStructergy.Services
             var entity =
                 new Course()
                 {
-                    InstructorId = _userId,
                     Name = model.Name,
                     Students = model.Students
                 };
@@ -39,7 +38,7 @@ namespace InStructergy.Services
                 var query =
                     ctx
                     .Courses
-                    .Where(e => e.InstructorId == _userId)
+                    //.Where(e => e.InstructorId == _userId)
                     .Select(
                         e =>
                         new CourseListItem

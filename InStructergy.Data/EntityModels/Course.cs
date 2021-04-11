@@ -12,7 +12,7 @@ namespace InStructergy.Data.EntityModels
         [Key]
         public int Id { get; set; }
         public string Name { get; set; }
-        public Guid InstructorId { get; set; }
+        public string InstructorId { get; set; }
         public List<Student> Students { get; set; }
 
     }
