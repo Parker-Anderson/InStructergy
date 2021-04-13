@@ -14,7 +14,10 @@ namespace InStructergy.MVC.Controllers
         // GET: Student
         public ActionResult Index()
         {
-            return View();
+            var service = CreateStudentService();
+            var model = service.GetStudents();
+            return View(model);
+            
         }
         private StudentService CreateStudentService()
         {
