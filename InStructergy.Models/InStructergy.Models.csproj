@@ -61,10 +61,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="FileModels\" />
+    <Folder Include="PostModels\" />
     <Folder Include="Properties\" />
+    <Folder Include="StudentModels\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RoleViewModel.cs" />
+    <Compile Include="ApplicationUserModels\RoleViewModel.cs" />
+    <Compile Include="CourseModels\CourseCreate.cs" />
+    <Compile Include="CourseModels\CourseDetail.cs" />
+    <Compile Include="CourseModels\CourseListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InStructergy.Data\InStructergy.Data.csproj">
