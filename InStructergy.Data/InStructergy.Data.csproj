@@ -70,6 +70,10 @@
     <Compile Include="Migrations\202104130632234_refactor.designer.cs">
       <DependentUpon>202104130632234_refactor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104132234285_Post.cs" />
+    <Compile Include="Migrations\202104132234285_Post.designer.cs">
+      <DependentUpon>202104132234285_Post.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104130632234_refactor.resx">
       <DependentUpon>202104130632234_refactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104132234285_Post.resx">
+      <DependentUpon>202104132234285_Post.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

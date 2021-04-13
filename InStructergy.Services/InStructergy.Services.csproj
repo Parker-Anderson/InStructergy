@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CourseService.cs" />
+    <Compile Include="PostService.cs" />
     <Compile Include="StudentService.cs" />
   </ItemGroup>
   <ItemGroup>
