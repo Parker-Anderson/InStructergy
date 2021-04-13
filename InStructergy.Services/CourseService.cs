@@ -40,7 +40,6 @@ namespace InStructergy.Services
                 var query =
                     ctx
                     .Courses
-                    .Where(e => e.InstructorGuid == _userId)
                     .Select(
                         e =>
                         new CourseListItem
