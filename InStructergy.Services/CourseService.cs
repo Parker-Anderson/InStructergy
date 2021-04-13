@@ -74,5 +74,32 @@ namespace InStructergy.Services
 
             }
         }
+        public bool UpdateCourse(CourseEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Courses
+                    .Single(e => e.Id == model.Id);
+                entity.Name = model.Name;
+                entity.Students = model.Students;
+                entity.Id = model.Id;
+                return ctx.SaveChanges() == 1;
+            }
+
+        }
+        public bool DeleteCourse(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.Courses
+                    .Single(e => e.Id == id);
+                ctx.Courses.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
+    
 }

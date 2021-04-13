@@ -345,6 +345,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Course\Create.cshtml" />
     <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Course\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
