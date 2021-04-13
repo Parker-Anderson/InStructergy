@@ -1,3 +1,4 @@
+
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
@@ -5,8 +6,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{918C051C-AE35-4D0D-829B-41AAAE4CB436}</ProjectGuid>
-    <OutputType>Library</OutputType>
+ <ProjectGuid>{918C051C-AE35-4D0D-829B-41AAAE4CB436}</ProjectGuid>
+<OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InStructergy.Data</RootNamespace>
     <AssemblyName>InStructergy.Data</AssemblyName>

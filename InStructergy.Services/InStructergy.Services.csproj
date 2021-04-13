@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AE3B321E-9104-4FEE-A306-982E46E77877}</ProjectGuid>
-    <OutputType>Library</OutputType>
+<OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InStructergy.Services</RootNamespace>
     <AssemblyName>InStructergy.Services</AssemblyName>
