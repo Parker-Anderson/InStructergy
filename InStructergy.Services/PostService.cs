@@ -15,7 +15,7 @@ namespace InStructergy.Services
         private readonly Guid _userId;
         public PostService(Guid userId)
         {
-            userId = _userId;
+            _userId = userId;
         }
         public bool CreatePost(PostCreate model)
         {

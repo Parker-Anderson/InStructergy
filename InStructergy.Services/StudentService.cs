@@ -11,11 +11,11 @@ namespace InStructergy.Services
 {
     public class StudentService
     {
-        
-            private readonly Guid _userId;
+
+        private readonly Guid _userId = new Guid();
             public StudentService(Guid userId)
             {
-                userId = _userId;
+            _userId = userId;
             }
             public bool CreateStudent(StudentCreate model)
             {
@@ -26,7 +26,7 @@ namespace InStructergy.Services
                         Name = model.Name,
                         Files = model.Files,
                         Courses = model.Courses,
-                        InstructorId = model.InstructorId,
+                        InstructorId = _userId,
                         Instructors = model.Instructors,
                         GradePointAverage = model.GradePointAverage
                     };
@@ -51,7 +51,7 @@ namespace InStructergy.Services
                                 Name = e.Name,
                                 Files = e.Files,
                                 Courses = e.Courses,
-                                InstructorId = e.InstructorId,
+                                InstructorId = _userId,
                                 Instructors = e.Instructors,
                                 GradePointAverage = e.GradePointAverage
                             });
@@ -73,7 +73,7 @@ namespace InStructergy.Services
                             Name = entity.Name,
                             Files = entity.Files,
                             Courses = entity.Courses,
-                            InstructorId = entity.InstructorId,
+                            InstructorId = _userId,
                             Instructors = entity.Instructors,
                             GradePointAverage = entity.GradePointAverage
                         };
@@ -88,7 +88,7 @@ namespace InStructergy.Services
                     var entity =
                         ctx
                         .Students
-                        .Single(e => e.Id == model.Id);
+                        .Single(e => e.Id == model.Id && e.InstructorId == _userId);
 
                     return ctx.SaveChanges() == 1;
                 }
@@ -100,7 +100,7 @@ namespace InStructergy.Services
                 {
                     var entity =
                         ctx.Students
-                        .Single(e => e.Id == id);
+                        .Single(e => e.Id == id && e.InstructorId == _userId);
                     ctx.Students.Remove(entity);
                     return ctx.SaveChanges() == 1;
                 }

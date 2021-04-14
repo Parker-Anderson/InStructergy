@@ -14,7 +14,7 @@ namespace InStructergy.Services
         private readonly Guid _userId;
         public CourseService(Guid userId)
         {
-            userId = _userId;
+            _userId = userId;
         }
         public bool CreateCourse(CourseCreate model)
         {
