@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E289CCC7-CE34-4FBF-B337-F11B1B73368D}</ProjectGuid>
+    <ProjectGuid>{AE3B321E-9104-4FEE-A306-982E46E77877}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SchoolBoard.Models</RootNamespace>
-    <AssemblyName>SchoolBoard.Models</AssemblyName>
+    <RootNamespace>SchoolBoard.Services</RootNamespace>
+    <AssemblyName>SchoolBoard.Services</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -61,28 +61,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FileModels\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationUserModels\RoleViewModel.cs" />
-    <Compile Include="CourseModels\CourseCreate.cs" />
-    <Compile Include="CourseModels\CourseDetail.cs" />
-    <Compile Include="CourseModels\CourseEdit.cs" />
-    <Compile Include="CourseModels\CourseListItem.cs" />
-    <Compile Include="PostModels\PostCreate.cs" />
-    <Compile Include="PostModels\PostDetail.cs" />
-    <Compile Include="PostModels\PostEdit.cs" />
-    <Compile Include="PostModels\PostListItem.cs" />
-    <Compile Include="StudentModels\StudentCreate.cs" />
-    <Compile Include="StudentModels\StudentDetail.cs" />
-    <Compile Include="StudentModels\StudentEdit.cs" />
-    <Compile Include="StudentModels\StudentListItem.cs" />
+    <Compile Include="CourseService.cs" />
+    <Compile Include="PostService.cs" />
+    <Compile Include="StudentService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InStructergy.Data\SchoolBoard.Data.csproj">
-      <Project>{918C051C-AE35-4D0D-829B-41AAAE4CB436}</Project>
+    <ProjectReference Include="..\SchoolBoard.Data\SchoolBoard.Data.csproj">
+      <Project>{918c051c-ae35-4d0d-829b-41aaae4cb436}</Project>
       <Name>SchoolBoard.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SchoolBoard.Models\SchoolBoard.Models.csproj">
+      <Project>{e289ccc7-ce34-4fbf-b337-f11b1b73368d}</Project>
+      <Name>SchoolBoard.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

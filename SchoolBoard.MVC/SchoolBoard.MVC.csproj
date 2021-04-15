@@ -370,15 +370,15 @@
     <Content Include="Scripts\jquery-3.6.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InStructergy.Data\SchoolBoard.Data.csproj">
+    <ProjectReference Include="..\SchoolBoard.Data\SchoolBoard.Data.csproj">
       <Project>{918C051C-AE35-4D0D-829B-41AAAE4CB436}</Project>
       <Name>SchoolBoard.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InStructergy.Models\SchoolBoard.Models.csproj">
+    <ProjectReference Include="..\SchoolBoard.Models\SchoolBoard.Models.csproj">
       <Project>{E289CCC7-CE34-4FBF-B337-F11B1B73368D}</Project>
       <Name>SchoolBoard.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InStructergy.Services\SchoolBoard.Services.csproj">
+    <ProjectReference Include="..\SchoolBoard.Services\SchoolBoard.Services.csproj">
       <Project>{AE3B321E-9104-4FEE-A306-982E46E77877}</Project>
       <Name>SchoolBoard.Services</Name>
     </ProjectReference>
