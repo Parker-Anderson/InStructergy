@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InStructergy.MVC</RootNamespace>
-    <AssemblyName>InStructergy.MVC</AssemblyName>
+    <RootNamespace>SchoolBoard.MVC</RootNamespace>
+    <AssemblyName>SchoolBoard.MVC</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -370,17 +370,17 @@
     <Content Include="Scripts\jquery-3.6.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InStructergy.Data\InStructergy.Data.csproj">
+    <ProjectReference Include="..\InStructergy.Data\SchoolBoard.Data.csproj">
       <Project>{918C051C-AE35-4D0D-829B-41AAAE4CB436}</Project>
-      <Name>InStructergy.Data</Name>
+      <Name>SchoolBoard.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InStructergy.Models\InStructergy.Models.csproj">
+    <ProjectReference Include="..\InStructergy.Models\SchoolBoard.Models.csproj">
       <Project>{E289CCC7-CE34-4FBF-B337-F11B1B73368D}</Project>
-      <Name>InStructergy.Models</Name>
+      <Name>SchoolBoard.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InStructergy.Services\InStructergy.Services.csproj">
+    <ProjectReference Include="..\InStructergy.Services\SchoolBoard.Services.csproj">
       <Project>{AE3B321E-9104-4FEE-A306-982E46E77877}</Project>
-      <Name>InStructergy.Services</Name>
+      <Name>SchoolBoard.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

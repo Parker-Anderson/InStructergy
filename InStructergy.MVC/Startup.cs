@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(InStructergy.MVC.Startup))]
-namespace InStructergy.MVC
+[assembly: OwinStartupAttribute(typeof(SchoolBoard.MVC.Startup))]
+namespace SchoolBoard.MVC
 {
     public partial class Startup
     {

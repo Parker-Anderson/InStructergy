@@ -1,11 +1,11 @@
-﻿using InStructergy.Data;
+﻿using SchoolBoard.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InStructergy.Models
+namespace SchoolBoard.Models
 {
     public class RoleViewModel
     {

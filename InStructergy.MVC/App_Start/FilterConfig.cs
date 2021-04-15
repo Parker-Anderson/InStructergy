@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace InStructergy.MVC
+namespace SchoolBoard.MVC
 {
     public class FilterConfig
     {

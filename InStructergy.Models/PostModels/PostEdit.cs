@@ -1,11 +1,11 @@
-﻿using InStructergy.Data.EntityModels;
+﻿using SchoolBoard.Data.EntityModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InStructergy.Models.PostModels
+namespace SchoolBoard.Models.PostModels
 {
     public class PostEdit
     {

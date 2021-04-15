@@ -1,13 +1,13 @@
-﻿using InStructergy.Data;
-using InStructergy.Data.EntityModels;
-using InStructergy.Models.CourseModels;
+﻿using SchoolBoard.Data;
+using SchoolBoard.Data.EntityModels;
+using SchoolBoard.Models.CourseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InStructergy.Services
+namespace SchoolBoard.Services
 {
     public class CourseService
     {

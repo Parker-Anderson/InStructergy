@@ -8,10 +8,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using InStructergy.MVC.Models;
-using InStructergy.Data;
+using SchoolBoard.MVC.Models;
+using SchoolBoard.Data;
 
-namespace InStructergy.MVC.Controllers
+namespace SchoolBoard.MVC.Controllers
 {
     [Authorize]
     public class AccountController : Controller

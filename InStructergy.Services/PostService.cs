@@ -1,14 +1,14 @@
-﻿using InStructergy.Data;
-using InStructergy.Data.EntityModels;
-using InStructergy.Models;
-using InStructergy.Models.PostModels;
+﻿using SchoolBoard.Data;
+using SchoolBoard.Data.EntityModels;
+using SchoolBoard.Models;
+using SchoolBoard.Models.PostModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InStructergy.Services
+namespace SchoolBoard.Services
 {
     public class PostService
     {

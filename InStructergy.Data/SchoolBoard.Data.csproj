@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E289CCC7-CE34-4FBF-B337-F11B1B73368D}</ProjectGuid>
+    <ProjectGuid>{918C051C-AE35-4D0D-829B-41AAAE4CB436}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InStructergy.Models</RootNamespace>
-    <AssemblyName>InStructergy.Models</AssemblyName>
+    <RootNamespace>SchoolBoard.Data</RootNamespace>
+    <AssemblyName>SchoolBoard.Data</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -57,33 +57,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityModels\Course.cs" />
+    <Compile Include="EntityModels\File.cs" />
+    <Compile Include="EntityModels\Post.cs" />
+    <Compile Include="EntityModels\Student.cs" />
+    <Compile Include="EntityModels\IdentityModels.cs" />
+    <Compile Include="Migrations\202104130522401_InitialCreate.cs" />
+    <Compile Include="Migrations\202104130522401_InitialCreate.designer.cs">
+      <DependentUpon>202104130522401_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104130632234_refactor.cs" />
+    <Compile Include="Migrations\202104130632234_refactor.designer.cs">
+      <DependentUpon>202104130632234_refactor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104132234285_Post.cs" />
+    <Compile Include="Migrations\202104132234285_Post.designer.cs">
+      <DependentUpon>202104132234285_Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="FileModels\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationUserModels\RoleViewModel.cs" />
-    <Compile Include="CourseModels\CourseCreate.cs" />
-    <Compile Include="CourseModels\CourseDetail.cs" />
-    <Compile Include="CourseModels\CourseEdit.cs" />
-    <Compile Include="CourseModels\CourseListItem.cs" />
-    <Compile Include="PostModels\PostCreate.cs" />
-    <Compile Include="PostModels\PostDetail.cs" />
-    <Compile Include="PostModels\PostEdit.cs" />
-    <Compile Include="PostModels\PostListItem.cs" />
-    <Compile Include="StudentModels\StudentCreate.cs" />
-    <Compile Include="StudentModels\StudentDetail.cs" />
-    <Compile Include="StudentModels\StudentEdit.cs" />
-    <Compile Include="StudentModels\StudentListItem.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\InStructergy.Data\InStructergy.Data.csproj">
-      <Project>{918C051C-AE35-4D0D-829B-41AAAE4CB436}</Project>
-      <Name>InStructergy.Data</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="Migrations\202104130522401_InitialCreate.resx">
+      <DependentUpon>202104130522401_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104130632234_refactor.resx">
+      <DependentUpon>202104130632234_refactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104132234285_Post.resx">
+      <DependentUpon>202104132234285_Post.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

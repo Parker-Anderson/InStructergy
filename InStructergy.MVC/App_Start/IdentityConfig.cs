@@ -10,10 +10,10 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using InStructergy.MVC.Models;
-using InStructergy.Data;
+using SchoolBoard.MVC.Models;
+using SchoolBoard.Data;
 
-namespace InStructergy.MVC
+namespace SchoolBoard.MVC
 {
     public class EmailService : IIdentityMessageService
     {

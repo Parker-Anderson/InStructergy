@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InStructergy.MVC", "InStructergy.MVC\InStructergy.MVC.csproj", "{191FC7C8-7A8B-4B55-BF87-50CE01888DA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolBoard.MVC", "InStructergy.MVC\SchoolBoard.MVC.csproj", "{191FC7C8-7A8B-4B55-BF87-50CE01888DA1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC", "MVC", "{77925164-7A34-4417-AB38-B03FFB66C8C8}"
 EndProject
@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{FD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{617B27B7-44F4-4305-9876-F271933919C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InStructergy.Data", "InStructergy.Data\InStructergy.Data.csproj", "{918C051C-AE35-4D0D-829B-41AAAE4CB436}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolBoard.Data", "InStructergy.Data\SchoolBoard.Data.csproj", "{918C051C-AE35-4D0D-829B-41AAAE4CB436}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InStructergy.Models", "InStructergy.Models\InStructergy.Models.csproj", "{E289CCC7-CE34-4FBF-B337-F11B1B73368D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolBoard.Models", "InStructergy.Models\SchoolBoard.Models.csproj", "{E289CCC7-CE34-4FBF-B337-F11B1B73368D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InStructergy.Services", "InStructergy.Services\InStructergy.Services.csproj", "{AE3B321E-9104-4FEE-A306-982E46E77877}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolBoard.Services", "InStructergy.Services\SchoolBoard.Services.csproj", "{AE3B321E-9104-4FEE-A306-982E46E77877}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

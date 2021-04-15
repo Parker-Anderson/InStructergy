@@ -1,19 +1,19 @@
-﻿namespace InStructergy.Data.Migrations
+﻿namespace SchoolBoard.Data.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<InStructergy.Data.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SchoolBoard.Data.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "InStructergy.Data.ApplicationDbContext";
+            ContextKey = "SchoolBoard.Data.ApplicationDbContext";
         }
 
-        protected override void Seed(InStructergy.Data.ApplicationDbContext context)
+        protected override void Seed(SchoolBoard.Data.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

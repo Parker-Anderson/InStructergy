@@ -1,12 +1,12 @@
-﻿using InStructergy.Data;
-using InStructergy.Data.EntityModels;
+﻿using SchoolBoard.Data;
+using SchoolBoard.Data.EntityModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InStructergy.Models.StudentModels
+namespace SchoolBoard.Models.StudentModels
 {
     public class StudentListItem
     {

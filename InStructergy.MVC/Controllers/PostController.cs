@@ -1,5 +1,5 @@
-﻿using InStructergy.Models.PostModels;
-using InStructergy.Services;
+﻿using SchoolBoard.Models.PostModels;
+using SchoolBoard.Services;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace InStructergy.MVC.Controllers
+namespace SchoolBoard.MVC.Controllers
 {
     public class PostController : Controller
     {

@@ -5,10 +5,10 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using InStructergy.MVC.Models;
-using InStructergy.Data;
+using SchoolBoard.MVC.Models;
+using SchoolBoard.Data;
 
-namespace InStructergy.MVC
+namespace SchoolBoard.MVC
 {
     public partial class Startup
     {
