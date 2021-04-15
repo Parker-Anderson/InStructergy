@@ -60,6 +60,7 @@
     <Compile Include="EntityModels\Course.cs" />
     <Compile Include="EntityModels\File.cs" />
     <Compile Include="EntityModels\Post.cs" />
+    <Compile Include="EntityModels\PostReply.cs" />
     <Compile Include="EntityModels\Student.cs" />
     <Compile Include="EntityModels\IdentityModels.cs" />
     <Compile Include="Migrations\202104130522401_InitialCreate.cs" />
@@ -73,6 +74,10 @@
     <Compile Include="Migrations\202104132234285_Post.cs" />
     <Compile Include="Migrations\202104132234285_Post.designer.cs">
       <DependentUpon>202104132234285_Post.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104152337187_PostReply.cs" />
+    <Compile Include="Migrations\202104152337187_PostReply.designer.cs">
+      <DependentUpon>202104152337187_PostReply.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
@@ -92,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104132234285_Post.resx">
       <DependentUpon>202104132234285_Post.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104152337187_PostReply.resx">
+      <DependentUpon>202104152337187_PostReply.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
