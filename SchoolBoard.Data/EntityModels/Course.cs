@@ -17,7 +17,7 @@ namespace SchoolBoard.Data.EntityModels
         public string InstructorId { get; set; }
         public Guid InstructorGuid { get; set; }
         public virtual ApplicationUser Instructor { get; set; }
-        public List<Student> Students { get; set; }
+        public IEnumerable<Student> Students { get; set; }
 
     }
 }

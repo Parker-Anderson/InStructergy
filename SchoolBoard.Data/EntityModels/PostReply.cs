@@ -12,10 +12,14 @@ namespace SchoolBoard.Data.EntityModels
     {
         [Key]
         public int Id { get; set; }
+        [ForeignKey(nameof(Post))]
+        public int PostId { get; set; }
+        public virtual Post Post { get; set; }
         [ForeignKey(nameof(Instructor))]
         public string InstructorId { get; set; }
         public virtual ApplicationUser Instructor { get; set; }
         public string Label { get; set; }
         public string Body { get; set; }
+        public DateTime Created { get; set; }
     }
 }

@@ -79,6 +79,22 @@
     <Compile Include="Migrations\202104152337187_PostReply.designer.cs">
       <DependentUpon>202104152337187_PostReply.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104152346431_ApplicationUserCourses.cs" />
+    <Compile Include="Migrations\202104152346431_ApplicationUserCourses.designer.cs">
+      <DependentUpon>202104152346431_ApplicationUserCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104152356277_PostIdFK.cs" />
+    <Compile Include="Migrations\202104152356277_PostIdFK.designer.cs">
+      <DependentUpon>202104152356277_PostIdFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104160016405_DateTimeProps.cs" />
+    <Compile Include="Migrations\202104160016405_DateTimeProps.designer.cs">
+      <DependentUpon>202104160016405_DateTimeProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104160109347_ListstoIENUM.cs" />
+    <Compile Include="Migrations\202104160109347_ListstoIENUM.designer.cs">
+      <DependentUpon>202104160109347_ListstoIENUM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +116,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104152337187_PostReply.resx">
       <DependentUpon>202104152337187_PostReply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104152346431_ApplicationUserCourses.resx">
+      <DependentUpon>202104152346431_ApplicationUserCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104152356277_PostIdFK.resx">
+      <DependentUpon>202104152356277_PostIdFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104160016405_DateTimeProps.resx">
+      <DependentUpon>202104160016405_DateTimeProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104160109347_ListstoIENUM.resx">
+      <DependentUpon>202104160109347_ListstoIENUM.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

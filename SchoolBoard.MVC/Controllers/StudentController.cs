@@ -38,7 +38,7 @@ namespace SchoolBoard.MVC.Controllers
             if (!ModelState.IsValid)
             {
                 return View(model);
-            }
+            }            
             var service = CreateStudentService();
             service.CreateStudent(model);
             return RedirectToAction("Index");

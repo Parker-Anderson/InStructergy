@@ -13,7 +13,7 @@ namespace SchoolBoard.Data
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        // public List<Course> Courses { get; set; }
+        public IEnumerable<Course> Courses { get; set; }
         
         public ApplicationRole Role { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -40,10 +40,12 @@ namespace SchoolBoard.Data
         {
             return new ApplicationDbContext();
         }
+
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<File> Files { get; set; }
+        public DbSet<PostReply> Replies { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

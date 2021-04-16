@@ -22,12 +22,13 @@ namespace SchoolBoard.Services
             var entity =
                 new Post()
                 {
-                    Name = model.Name,
+                    Title = model.Name,
                     Body = model.Body,
                     Instructor = model.Instructor,
                     InstructorId = model.InstructorId,
                     Student = model.Student,
                     StudentId = model.StudentId
+                    
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -47,7 +48,7 @@ namespace SchoolBoard.Services
                         new PostListItem
                         {
                             Id = e.Id,
-                            Name = e.Name,
+                            Name = e.Title,
                             Body = e.Body,
                             InstructorId = e.InstructorId,
                             Instructor = e.Instructor,
@@ -69,7 +70,7 @@ namespace SchoolBoard.Services
                     new PostDetail
                     {
                         Id = entity.Id,
-                        Name = entity.Name,
+                        Name = entity.Title,
                         Body = entity.Body,
                         Instructor = entity.Instructor,
                         InstructorId = entity.InstructorId,
@@ -89,7 +90,7 @@ namespace SchoolBoard.Services
                     .Posts
                     .Single(e => e.Id == model.Id);
                 entity.Id = model.Id;
-                entity.Name = model.Name;
+                entity.Title = model.Name;
                 entity.Body = model.Body;
                 return ctx.SaveChanges() == 1;
             }
