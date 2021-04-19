@@ -1,0 +1,24 @@
+﻿@model SchoolBoard.Data.ApplicationUser
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>SchoolBoard</h2>
+<h3>Welcome Educators</h3>
+<div>@{ if (User.Identity.IsAuthenticated)
+    {
+
+    <p>
+        @Html.ActionLink("My Courses", "Index", "Course")
+    </p>
+
+    }
+   
+    }
+   
+    </div>
+
+
+
+
