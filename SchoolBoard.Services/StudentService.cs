@@ -29,7 +29,7 @@ namespace SchoolBoard.Services
                     Courses = model.Courses,
                     Instructors = model.Instructors,
                     GradePointAverage = model.GradePointAverage,
-                    Instructor = model.Instructor,
+                
                 };
             using (var context = new ApplicationDbContext())
             {
@@ -55,33 +55,22 @@ namespace SchoolBoard.Services
                 return query.ToArray();
             }
         }
-        public IEnumerable<Student> GetStudentsByCourse(int id)
+        public IEnumerable<StudentListItem> GetStudentsByCourse(Course course)
         {
             using (var context = new ApplicationDbContext())
             {
-                
-                 return context.Courses.Where(c => c.Id == id).First().Students;
+
+                return context.Students.Where(s => s.Courses.Contains(course)).Select(e => new StudentListItem
+                {
+                    Id = e.Id,
+                    Name = e.Name
+                }).Include("Posts").Include("Instructor")
+                .Include("Replies").Include("Instructor")
+                .ToArray();
               
             }
         }
-        public IEnumerable<MyStudentListItem> MyStudents(string id)
-        {
-            
-            using (var db = new ApplicationDbContext())
-            {
 
-                var list = db.Students.ToList();
-                    ;
-                var query = 
-
-                list.Select(l => new MyStudentListItem()
-                {
-                    Id = l.Id,
-                    Name = l.Name,
-                });
-                return query.ToArray();
-            }
-        }
         public StudentDetail GetStudentById(int id)
         {
             using (var context = new ApplicationDbContext())
@@ -89,7 +78,6 @@ namespace SchoolBoard.Services
                 var entity =
                     context
                     .Students
-                    .Where(s => s.InstructorGuid == _instructorId)
                     .Single(e => e.Id == id);
                 return
                     new StudentDetail
@@ -98,7 +86,6 @@ namespace SchoolBoard.Services
                         Name = entity.Name,
                         Courses = entity.Courses,
                         Posts = entity.Posts,
-                        InstructorGuid = entity.InstructorGuid,
                         Instructors = entity.Instructors,
                         GradePointAverage = entity.GradePointAverage
                     };

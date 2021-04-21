@@ -50,6 +50,7 @@ namespace SchoolBoard.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+                
         }
 
         

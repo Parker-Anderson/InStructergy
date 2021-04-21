@@ -16,8 +16,7 @@ namespace SchoolBoard.Data.DomainModels
         public IEnumerable<Course> Courses { get; set; }
         public virtual IEnumerable<Post> Posts { get; set; }
         public double GradePointAverage { get; set; }
-        public ApplicationUser Instructor { get; set; }
-        public string InstructorId { get { return Instructor.Id; } }
-        public Guid InstructorGuid { get; set; }
+    
+
     }
 }

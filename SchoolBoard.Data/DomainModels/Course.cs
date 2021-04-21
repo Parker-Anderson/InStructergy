@@ -18,6 +18,6 @@ namespace SchoolBoard.Data.DomainModels
         public Guid InstructorGuid { get; set;  }
         public virtual ApplicationUser Instructor { get; set; }
         public virtual IEnumerable<Student> Students { get; set; }
-        public Student Student { get; set; }
+       
     }
 }

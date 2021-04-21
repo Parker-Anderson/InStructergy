@@ -1,0 +1,25 @@
+﻿@model SchoolBoard.Models.CourseModels.CourseStudentModel
+    @{ 
+        if (Model.Students.Any())
+            {
+                <table class="table table-hover" id="studentstable">
+                 <tbody> 
+                     @foreach (var student in Model.Students)
+                     {
+
+                     <tr>
+                         <td>
+                             @student.Name
+                         </td>
+                     </tr>
+                     }
+                 </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="noPosts">
+                    <h2>There are no students added.</h2>
+                </div>
+            }
+    }

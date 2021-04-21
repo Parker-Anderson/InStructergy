@@ -14,8 +14,7 @@ namespace SchoolBoard.MVC.Controllers
     public class CourseController : Controller
     {
         private readonly Guid _userId;
-        private readonly CourseService _courseService;
-        private readonly StudentService _studentService;
+       
         
         [Authorize]
         // GET: CourseModels
@@ -37,21 +36,34 @@ namespace SchoolBoard.MVC.Controllers
         }
         public ActionResult Student(int id)
         {
+            var _courseService = new CourseService(Guid.Parse(User.Identity.GetUserId()));
+            var _studentService = new StudentService(Guid.Parse(User.Identity.GetUserId()));
             var course = _courseService.GetCourseById(id);
-            var students = _studentService.GetStudentsByCourse(id);
-            var studentListItems = students.Select(student => new StudentListItem
+            var students = course.Students;
+            var studentsList = students.Select(student => new StudentListItem
             {
                 Id = student.Id,
                 Name = student.Name,
-                InstructorGuid = student.InstructorGuid, 
-                
+
             });
-            return View();
+            var model = new CourseStudentModel
+            {
+                Students = studentsList,
+                Course = BuildCourseListItem(course)
+            };
+            return View(model);
+             
         }
-        private CourseListItem BuildCourseListItem(Student student)
+        private CourseListItem BuildCourseListItem(Course course)
         {
-            throw new NotImplementedException();
+            return new CourseListItem
+            {
+                Id = course.Id,
+                Name = course.Name,
+                Instructor = course.Instructor
+            };
         }
+       
         public ActionResult Create()
         {
             return View();
@@ -74,6 +86,17 @@ namespace SchoolBoard.MVC.Controllers
             var model = service.GetCourseById(id);
             return View(model);
         }
+        private CourseListItem courseStudentListModel(Student student, int id)
+        {
+            var course = student.Courses.Single(c => c.Id == id);
+            return new CourseListItem
+            {
+                Id = course.Id,
+                Name = course.Name,
+
+            };
+        }
+
 
     }
 }

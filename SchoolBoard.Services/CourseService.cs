@@ -24,7 +24,7 @@ namespace SchoolBoard.Services
             {
                 var query =
                     context
-                    .Courses
+                    .Courses.Include("Students")
                     .Select(q => new CourseListItem
                     {
                         Id = q.Id,
@@ -38,6 +38,7 @@ namespace SchoolBoard.Services
         }
         public bool CreateCourse(CourseCreate model)
         {
+            var ctx = new ApplicationDbContext();
             var _studentService = new StudentService(_instructorId);
             var _courseService = new CourseService(_instructorId);
             var entity =
@@ -46,41 +47,43 @@ namespace SchoolBoard.Services
                     InstructorGuid = _instructorId,
                     Id = model.Id,
                     Name = model.Name,
-                    Student = model.Student,
-                    Instructor = model.Instructor,
-
-                    Students = model.Students,
-                    
-                    
-                    
+                    Instructor = model.Instructor
                 };
+
             using (var context = new ApplicationDbContext())
             {
                 context.Courses.Add(entity);
                 return context.SaveChanges() == 1;
             }
         }
-        public CourseDetail GetCourseById(int id)
+        public Course GetCourseById(int id)
         {
             using (var context = new ApplicationDbContext())
             {
-                var entity =
+               var entity =
                     context
                     .Courses
                     .Single(e => e.Id == id);
-                return
-                    new CourseDetail
-                    {
-                        Id = entity.Id,
-                        Name = entity.Name,
-                        Instructor = entity.Instructor,
-                        InstructorGuid = entity.InstructorGuid,
-                        InstructorId = entity.InstructorId,
-                        Students = entity.Students
-                    };
+                return entity;
             }
         }
-        
+        public bool AddStudent(Student student, int id)
+        {
+            
+           
+            
+            using (var context = new ApplicationDbContext())
+            {
+
+                var course = context.Courses.Single(c => c.Id == id);
+                course.Students.ToList().Add(student);
+                return context.SaveChanges() == 1;
+
+               
+            }
+
+        }
+
 
     }
    

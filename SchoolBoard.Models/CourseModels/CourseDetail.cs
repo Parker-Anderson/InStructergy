@@ -17,5 +17,7 @@ namespace SchoolBoard.Models.CourseModels
         public virtual ApplicationUser Instructor { get; set; }
         public virtual IEnumerable<Student> Students { get; set; }
 
+
+
     }
 }

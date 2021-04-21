@@ -99,6 +99,18 @@
     <Compile Include="Migrations\202104182306539_CoursePropertytype.Designer.cs">
       <DependentUpon>202104182306539_CoursePropertytype.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104202238327_2.cs" />
+    <Compile Include="Migrations\202104202238327_2.Designer.cs">
+      <DependentUpon>202104202238327_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210021226_3.cs" />
+    <Compile Include="Migrations\202104210021226_3.Designer.cs">
+      <DependentUpon>202104210021226_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210042496_testcourseseed.cs" />
+    <Compile Include="Migrations\202104210042496_testcourseseed.Designer.cs">
+      <DependentUpon>202104210042496_testcourseseed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -136,6 +148,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104182306539_CoursePropertytype.resx">
       <DependentUpon>202104182306539_CoursePropertytype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104202238327_2.resx">
+      <DependentUpon>202104202238327_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210021226_3.resx">
+      <DependentUpon>202104210021226_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210042496_testcourseseed.resx">
+      <DependentUpon>202104210042496_testcourseseed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
