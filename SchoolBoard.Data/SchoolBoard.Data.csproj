@@ -111,6 +111,14 @@
     <Compile Include="Migrations\202104210042496_testcourseseed.Designer.cs">
       <DependentUpon>202104210042496_testcourseseed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104210120007_many-to-manyStudentCourse.cs" />
+    <Compile Include="Migrations\202104210120007_many-to-manyStudentCourse.Designer.cs">
+      <DependentUpon>202104210120007_many-to-manyStudentCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210125485_seedcoursestudent.cs" />
+    <Compile Include="Migrations\202104210125485_seedcoursestudent.Designer.cs">
+      <DependentUpon>202104210125485_seedcoursestudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -157,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104210042496_testcourseseed.resx">
       <DependentUpon>202104210042496_testcourseseed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210120007_many-to-manyStudentCourse.resx">
+      <DependentUpon>202104210120007_many-to-manyStudentCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210125485_seedcoursestudent.resx">
+      <DependentUpon>202104210125485_seedcoursestudent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,7 +13,7 @@ namespace SchoolBoard.Data.DomainModels
         public int Id { get; set; }
         public string Name { get; set; }
         public virtual IEnumerable<ApplicationUser> Instructors { get; set; }
-        public IEnumerable<Course> Courses { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
         public virtual IEnumerable<Post> Posts { get; set; }
         public double GradePointAverage { get; set; }
     

@@ -17,7 +17,8 @@ namespace SchoolBoard.Data.DomainModels
         public string InstructorId { get; set; }
         public Guid InstructorGuid { get; set;  }
         public virtual ApplicationUser Instructor { get; set; }
-        public virtual IEnumerable<Student> Students { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
+        public virtual Student Student { get; set; } 
        
     }
 }

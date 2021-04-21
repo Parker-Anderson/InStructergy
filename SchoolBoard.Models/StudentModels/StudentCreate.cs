@@ -12,7 +12,7 @@ namespace SchoolBoard.Models.StudentModels
     {
         public string Name { get; set; }
         public  IEnumerable<ApplicationUser> Instructors { get; set; }
-        public IEnumerable<Course> Courses { get; set; }
+        public ICollection<Course> Courses { get; set; }
         public double GradePointAverage { get; set; }
         public string InstructorId { get; set; }
         public ApplicationUser Instructor { get; set; }

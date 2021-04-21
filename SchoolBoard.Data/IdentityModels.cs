@@ -50,6 +50,18 @@ namespace SchoolBoard.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+            modelBuilder
+                .Entity<Course>()
+                .HasMany<Student>(s => (ICollection<Student>)s.Students)
+                .WithMany(c => (ICollection<Course>)c.Courses)
+                .Map(cs =>
+                {
+                    cs.MapLeftKey("CourseRefId");
+                    cs.MapRightKey("StudentRefId");
+                    cs.ToTable("CourseStudent");
+                });
+          
+                
                 
         }
 

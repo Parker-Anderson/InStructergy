@@ -62,7 +62,7 @@ namespace SchoolBoard.Services
             {
                var entity =
                     context
-                    .Courses
+                    .Courses.Include("Students")
                     .Single(e => e.Id == id);
                 return entity;
             }
