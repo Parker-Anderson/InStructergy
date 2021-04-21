@@ -119,6 +119,10 @@
     <Compile Include="Migrations\202104210125485_seedcoursestudent.Designer.cs">
       <DependentUpon>202104210125485_seedcoursestudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104210359040_seedconfig.cs" />
+    <Compile Include="Migrations\202104210359040_seedconfig.Designer.cs">
+      <DependentUpon>202104210359040_seedconfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -171,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104210125485_seedcoursestudent.resx">
       <DependentUpon>202104210125485_seedcoursestudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210359040_seedconfig.resx">
+      <DependentUpon>202104210359040_seedconfig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

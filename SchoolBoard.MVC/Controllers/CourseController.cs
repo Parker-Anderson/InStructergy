@@ -53,7 +53,7 @@ namespace SchoolBoard.MVC.Controllers
                 {
                     Id = course.Id,
                     Name = course.Name,
-                    Instructor = course.Instructor
+                    Instructor = course.Instructor,
                 }
             };
             return View(model);
