@@ -49,7 +49,12 @@ namespace SchoolBoard.MVC.Controllers
             var model = new CourseStudentModel
             {
                 Students = studentsList,
-                Course = BuildCourseListItem(course)
+                Course = new CourseListItem
+                {
+                    Id = course.Id,
+                    Name = course.Name,
+                    Instructor = course.Instructor,
+                }
             };
             return View(model);
              

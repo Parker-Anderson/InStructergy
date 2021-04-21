@@ -26,6 +26,12 @@ namespace SchoolBoard.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.Courses.AddOrUpdate(c => c.Id,
+                new DomainModels.Course() { Id = 1, Name = "Computer Science", InstructorId = "cf45c79c-e064-485d-988d-bfb54e38174e" },
+                new DomainModels.Course() { Id = 2, Name = "Math", InstructorId = "cf45c79c-e064-485d-988d-bfb54e38174e" },
+                new DomainModels.Course() { Id = 3, Name = "Physics", InstructorId = "cf45c79c-e064-485d-988d-bfb54e38174e" }
+
+                );
         }
     }
 }
