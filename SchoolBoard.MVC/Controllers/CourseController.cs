@@ -40,35 +40,32 @@ namespace SchoolBoard.MVC.Controllers
             var _studentService = new StudentService(Guid.Parse(User.Identity.GetUserId()));
             var course = _courseService.GetCourseById(id);
             var students = course.Students;
-            var studentsList = students.Select(student => new StudentListItem
+            var studentList = students.Select(student => new StudentListItem
             {
                 Id = student.Id,
                 Name = student.Name,
+                
 
             });
-            var model = new CourseStudentModel
-            {
-                Students = studentsList,
-                Course = new CourseListItem
-                {
-                    Id = course.Id,
-                    Name = course.Name,
-                    Instructor = course.Instructor,
-                }
-            };
-            return View(model);
-             
-        }
-        private CourseListItem BuildCourseListItem(Course course)
-        {
-            return new CourseListItem
+            var courseModel = new CourseListItem
             {
                 Id = course.Id,
                 Name = course.Name,
-                Instructor = course.Instructor
+                Instructor = course.Instructor,
+                InstructorId = course.InstructorId
             };
+            var model = new CourseStudentModel
+            {
+                Course = courseModel,
+                Students = studentList
+            };
+            return View(model);
+                
+                
+                
+             
         }
-       
+
         public ActionResult Create()
         {
             return View();

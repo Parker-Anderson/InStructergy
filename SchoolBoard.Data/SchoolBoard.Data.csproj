@@ -123,6 +123,22 @@
     <Compile Include="Migrations\202104210359040_seedconfig.Designer.cs">
       <DependentUpon>202104210359040_seedconfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104210425346_moreseeddata.cs" />
+    <Compile Include="Migrations\202104210425346_moreseeddata.Designer.cs">
+      <DependentUpon>202104210425346_moreseeddata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210433174_moreseeddata2.cs" />
+    <Compile Include="Migrations\202104210433174_moreseeddata2.Designer.cs">
+      <DependentUpon>202104210433174_moreseeddata2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210440062_moreseeddata3.cs" />
+    <Compile Include="Migrations\202104210440062_moreseeddata3.Designer.cs">
+      <DependentUpon>202104210440062_moreseeddata3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210446198_moreseeddatafix.cs" />
+    <Compile Include="Migrations\202104210446198_moreseeddatafix.Designer.cs">
+      <DependentUpon>202104210446198_moreseeddatafix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -178,6 +194,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104210359040_seedconfig.resx">
       <DependentUpon>202104210359040_seedconfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210425346_moreseeddata.resx">
+      <DependentUpon>202104210425346_moreseeddata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210433174_moreseeddata2.resx">
+      <DependentUpon>202104210433174_moreseeddata2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210440062_moreseeddata3.resx">
+      <DependentUpon>202104210440062_moreseeddata3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210446198_moreseeddatafix.resx">
+      <DependentUpon>202104210446198_moreseeddatafix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -44,7 +44,7 @@ namespace SchoolBoard.Services
             var entity =
                 new Course()
                 {
-                    InstructorGuid = _instructorId,
+                    InstructorGuid = Guid.Parse(model.Instructor.Id),
                     Id = model.Id,
                     Name = model.Name,
                     Instructor = model.Instructor
@@ -63,6 +63,7 @@ namespace SchoolBoard.Services
                var entity =
                     context
                     .Courses.Include("Students")
+                    .Include("Instructor")
                     .Single(e => e.Id == id);
                 return entity;
             }
