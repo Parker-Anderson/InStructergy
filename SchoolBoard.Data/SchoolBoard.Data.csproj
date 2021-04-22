@@ -143,6 +143,10 @@
     <Compile Include="Migrations\202104220344222_usersfix.Designer.cs">
       <DependentUpon>202104220344222_usersfix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104221944150_UserSeed.cs" />
+    <Compile Include="Migrations\202104221944150_UserSeed.Designer.cs">
+      <DependentUpon>202104221944150_UserSeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -213,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104220344222_usersfix.resx">
       <DependentUpon>202104220344222_usersfix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104221944150_UserSeed.resx">
+      <DependentUpon>202104221944150_UserSeed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
