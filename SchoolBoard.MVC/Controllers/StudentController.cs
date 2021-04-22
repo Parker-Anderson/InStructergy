@@ -48,6 +48,12 @@ namespace SchoolBoard.MVC.Controllers
             service.CreateStudent(model);
             return View(model);
         }
+        public ActionResult Details(int id)
+        {
+            var service = new StudentService(Guid.Parse(User.Identity.GetUserId()));
+            var model = service.GetStudentById(id);
+            return View(model);
+        }
 
     }
 }
