@@ -11,18 +11,3 @@
     </tbody>
 </table>
 
-<table>
-    <tbody>
-        @foreach(var post in Model.Posts)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(m=>post.Instructor.Name)
-                        @Html.DisplayFor(m=>post.Title)
-                        @Html.DisplayFor(m=>post.Body)
-                        @Html.DisplayFor(m=>post.Created)
-                    </td>
-                </tr>
-            }
-    </tbody>
-</table>
