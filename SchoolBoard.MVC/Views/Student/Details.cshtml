@@ -1,3 +1,28 @@
-﻿@model SchoolBoard.Models.StudentModels.StudentDetail
+﻿@model      SchoolBoard.Models.StudentModels.StudentDetail
+   
+
 
 <h2>@Model.Name</h2>
+
+<table>
+    <tbody>
+        
+          @Html.Partial("CreatePost", new SchoolBoard.Models.PostModels.PostCreate())
+    </tbody>
+</table>
+
+<table>
+    <tbody>
+        @foreach(var post in Model.Posts)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m=>post.Instructor.Name)
+                        @Html.DisplayFor(m=>post.Title)
+                        @Html.DisplayFor(m=>post.Body)
+                        @Html.DisplayFor(m=>post.Created)
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>

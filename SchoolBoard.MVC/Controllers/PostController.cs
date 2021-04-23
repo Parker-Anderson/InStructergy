@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
-using SchoolBoard.Models.StudentModels;
+using SchoolBoard.Models.PostModels;
 using SchoolBoard.Services;
 using System;
 using System.Collections.Generic;
@@ -9,23 +9,20 @@ using System.Web.Mvc;
 
 namespace SchoolBoard.MVC.Controllers
 {
-    public class StudentController : Controller
+    public class PostController : Controller
     {
-        // GET: Student
-
+        // GET: Post
         public ActionResult Index()
         {
-            var userId = User.Identity.GetUserId();
-            StudentService service = new StudentService(Guid.Parse(userId));
-            var model = service.GetStudents();
+            var service = CreatePostService();
+            var model = service.GetPosts();
             return View(model);
         }
 
-
-        private StudentService CreateStudentService()
+        private PostService CreatePostService()
         {
-            Guid userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new StudentService(userId);
+            var userId = User.Identity.GetUserId();
+            PostService service = new PostService(Guid.Parse(userId));
             return service;
         }
 
@@ -35,22 +32,22 @@ namespace SchoolBoard.MVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(StudentCreate model)
+        public ActionResult Create(PostCreate model)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            var service = CreateStudentService();
-            service.CreateStudent(model);
+            var service = CreatePostService();
+            service.CreatePost(model);
             return View(model);
         }
         public ActionResult Details(int id)
         {
-            var service = new StudentService(Guid.Parse(User.Identity.GetUserId()));
-            var model = service.GetStudentById(id);
+            var service = CreatePostService();
+            var model = service.GetPostById(id);
             return View(model);
         }
-
     }
+
 }
