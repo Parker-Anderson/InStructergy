@@ -3,6 +3,28 @@
 
 
 <h2>@Model.Name</h2>
+<h3>Posts</h3>
+@if (Model.Posts.Any())
+{
+                <table class="table table-hover" id="postsTable">
+                    <tbody>
+                        @foreach (var post in Model.Posts)
+                        {<tr>
+                            <td>
+                                @post.Title
+                                
+                            </td>
+                            <td>
+                                
+                            </td>
+                        </tr>}
+                    </tbody>
+                </table>
+}
+else
+{
+                < h2 > There are currently no posts for this student.</ h2 >
+            }
 
 <table>
     <tbody>
