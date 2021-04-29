@@ -40,6 +40,7 @@ namespace SchoolBoard.MVC.Controllers
             var _studentService = new StudentService(Guid.Parse(User.Identity.GetUserId()));
             var course = _courseService.GetCourseById(id);
             var students = course.Students;
+            
             var studentList = students.Select(student => new StudentListItem
             {
                 Id = student.Id,
@@ -47,6 +48,7 @@ namespace SchoolBoard.MVC.Controllers
                 
 
             });
+        
             var courseModel = new CourseListItem
             {
                 Id = course.Id,

@@ -41,7 +41,7 @@ namespace SchoolBoard.Data
         public DbSet<Student> Students { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<PostReply> Replies { get; set; }
-        public DbSet<CourseStudents> CourseStudents { get; set; }
+       // public DbSet<CourseStudents> CourseStudents { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

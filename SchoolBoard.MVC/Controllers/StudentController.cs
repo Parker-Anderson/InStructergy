@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using SchoolBoard.Models.PostModels;
 using SchoolBoard.Models.StudentModels;
 using SchoolBoard.Services;
 using System;
@@ -49,6 +50,17 @@ namespace SchoolBoard.MVC.Controllers
         {
             var service = new StudentService(Guid.Parse(User.Identity.GetUserId()));
             var model = service.GetStudentById(id);
+            var posts = model.Posts;
+            var postList = posts.Select(post => new PostListItem
+            {
+                Id = post.Id,
+                InstructorId = post.InstructorId,
+                Title = post.Title,
+                Body = post.Body,
+                Created = post.Created,
+                Student = post.Student,
+            });
+      
             return View(model);
         }
 

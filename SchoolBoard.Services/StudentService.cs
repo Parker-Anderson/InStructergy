@@ -27,7 +27,7 @@ namespace SchoolBoard.Services
                 {
                     Name = model.Name,
                     Courses = model.Courses,
-                    Instructors = model.Instructors,
+                    Instructors = (ICollection<ApplicationUser>)model.Instructors,
                     GradePointAverage = model.GradePointAverage,
                 
                 };
@@ -77,7 +77,7 @@ namespace SchoolBoard.Services
             {
                 var entity =
                     context
-                    .Students
+                    .Students.Include("Posts")
                     .Single(e => e.Id == id);
                 return
                     new StudentDetail

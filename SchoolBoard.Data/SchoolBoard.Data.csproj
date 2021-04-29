@@ -155,6 +155,10 @@
     <Compile Include="Migrations\202104271805214_4.Designer.cs">
       <DependentUpon>202104271805214_4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104291904066_enumerable-to-collection.cs" />
+    <Compile Include="Migrations\202104291904066_enumerable-to-collection.Designer.cs">
+      <DependentUpon>202104291904066_enumerable-to-collection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -234,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104271805214_4.resx">
       <DependentUpon>202104271805214_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104291904066_enumerable-to-collection.resx">
+      <DependentUpon>202104291904066_enumerable-to-collection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
