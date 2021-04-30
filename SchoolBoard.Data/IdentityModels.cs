@@ -58,8 +58,8 @@ namespace SchoolBoard.Data
                 .WithMany(c => (ICollection<Course>)c.Courses)
                 .Map(cs =>
                 {
-                    cs.MapLeftKey("CourseId");
-                    cs.MapRightKey("StudentId");
+                    cs.MapLeftKey("CourseRefId");
+                    cs.MapRightKey("StudentRefId");
                     cs.ToTable("CourseStudent");
                 });
           

@@ -242,10 +242,10 @@
     <Content Include="Views\Course\Student.cshtml" />
     <Content Include="Views\Student\Details.cshtml" />
     <Content Include="Views\Student\CreatePost.cshtml" />
+    <Content Include="Views\Post\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Post\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

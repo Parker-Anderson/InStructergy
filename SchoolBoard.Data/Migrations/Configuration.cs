@@ -52,6 +52,8 @@ namespace SchoolBoard.Data.Migrations
             var amanda = new DomainModels.Student() { Id = 10, Name = "Amanda", GradePointAverage = 4.0 };
             //);
             context.Students.AddOrUpdate(bill, karen, bob, katie, joe, susan, jeremy, megan, john, amanda);
+            context.SaveChanges();
+
 
             //amanda.Courses.Add(latin);
          //   amanda.Courses.Add(history);

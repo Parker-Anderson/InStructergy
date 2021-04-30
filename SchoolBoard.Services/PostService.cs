@@ -16,7 +16,7 @@ namespace SchoolBoard.Services
         {
             _instructorId = userId;
         }
-        public bool CreatePost(PostCreate model)
+        public bool CreatePost(NewPostModel model)
         {
             var entity =
                 new Post()
@@ -77,7 +77,7 @@ namespace SchoolBoard.Services
             {
                 var entity =
                     context
-                    .Posts
+                    .Posts.Include("Student").Include("Instructor").Include("Replies")
                     .Single(p => p.Id == id);
                 return
                     new PostDetail
@@ -85,7 +85,7 @@ namespace SchoolBoard.Services
                         Id = entity.Id,
                         Student = entity.Student,
                         Instructor = entity.Instructor,
-                        InstructorId = entity.InstructorId,
+                        InstructorId = entity.Instructor.Id,
                         Title = entity.Title,
                         Body = entity.Body,
                         Replies = (ICollection<PostReply>)entity.Replies,

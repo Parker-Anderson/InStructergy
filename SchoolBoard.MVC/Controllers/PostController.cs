@@ -11,6 +11,7 @@ namespace SchoolBoard.MVC.Controllers
 {
     public class PostController : Controller
     {
+        
         // GET: Post
         public ActionResult Index()
         {
@@ -26,13 +27,21 @@ namespace SchoolBoard.MVC.Controllers
             return service;
         }
 
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var studentService = new StudentService(userId);
+            var student = studentService.GetStudentById(id);
+            var model = new NewPostModel
+            {
+                InstructorName = User.Identity.Name,
+                StudentName = student.Name
+            };
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PostCreate model)
+        public ActionResult CreatePost(PostCreate model)
         {
             if (!ModelState.IsValid)
             {
@@ -41,7 +50,13 @@ namespace SchoolBoard.MVC.Controllers
             var service = CreatePostService();
             service.CreatePost(model);
             return View(model);
-        }
+        }            
+                //**** --> CREATE NEW MODEL FOR 'new Post' where Student = student, not StudentDetail.  Maybe ignore PostCreate (in vid '09' @ 4:27) --> then once passed into controller method, @ 7:00 begin httppost method. --> iot allow user post creation from view. 
+                //will have to redo above 10 lines or so./ 
+
+
+
+        
         public ActionResult Details(int id)
         {
             var service = CreatePostService();
