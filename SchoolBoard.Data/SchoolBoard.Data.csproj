@@ -58,6 +58,7 @@
     <Compile Include="DomainModels\Post.cs" />
     <Compile Include="DomainModels\PostReply.cs" />
     <Compile Include="DomainModels\Student.cs" />
+    <Compile Include="Helpers\IdentityHelper.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202104171930473_domainmodels.cs" />
     <Compile Include="Migrations\202104171930473_domainmodels.Designer.cs">
@@ -159,6 +160,14 @@
     <Compile Include="Migrations\202104291904066_enumerable-to-collection.Designer.cs">
       <DependentUpon>202104291904066_enumerable-to-collection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104300032511_seedId.cs" />
+    <Compile Include="Migrations\202104300032511_seedId.Designer.cs">
+      <DependentUpon>202104300032511_seedId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104300045540_refid.cs" />
+    <Compile Include="Migrations\202104300045540_refid.Designer.cs">
+      <DependentUpon>202104300045540_refid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -241,6 +250,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104291904066_enumerable-to-collection.resx">
       <DependentUpon>202104291904066_enumerable-to-collection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104300032511_seedId.resx">
+      <DependentUpon>202104300032511_seedId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104300045540_refid.resx">
+      <DependentUpon>202104300045540_refid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
