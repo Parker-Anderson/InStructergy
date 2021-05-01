@@ -16,6 +16,7 @@ namespace SchoolBoard.MVC.Controllers
     {
         private static UserManager<ApplicationUser> _userManager;
         private readonly PostService _postService;
+        private readonly StudentService _studentService;
         
         
         // GET: Post
@@ -57,25 +58,25 @@ namespace SchoolBoard.MVC.Controllers
             await _postService.Add(post);
 
             return RedirectToAction("Index", "Post", post.Id);
-            //-->> 09 -> 13:00 --> after creating Add method in PostService
+            //-->> after creating Add method in PostService
 
               
         }
 
         private Post BuildPost(NewPostModel model, ApplicationUser user)
         {
+            var student = _studentService.GetStudentEntityById(model.StudentId);
             return new Post
             {
                 Instructor = user,
                 Title = model.Title,
                 Body = model.Body,
                 Created = DateTime.Now,
-                Student = model.Student,
+                Student = student
             };
         }
 
-        //**** --> CREATE NEW MODEL FOR 'new Post' where Student = student, not StudentDetail.  Maybe ignore PostCreate (in vid '09' @ 4:27) --> then once passed into controller method, @ 7:00 begin httppost method. --> iot allow user post creation from view. 
-        //will have to redo above 10 lines or so./ 
+        //**** --> CREATE NEW MODEL FOR 'new Post' where Student = student, not StudentDetail.  Maybe ignore PostCreate 
 
 
 

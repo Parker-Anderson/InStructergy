@@ -60,6 +60,7 @@
     <Compile Include="CourseModels\CourseListItem.cs" />
     <Compile Include="CourseModels\CourseStudentListModel.cs" />
     <Compile Include="CourseModels\CourseStudentModel.cs" />
+    <Compile Include="PostModels\NewPostModel.cs" />
     <Compile Include="PostModels\PostCreate.cs" />
     <Compile Include="PostModels\PostDetail.cs" />
     <Compile Include="PostModels\PostIndexModel.cs" />

@@ -14,6 +14,7 @@ namespace SchoolBoard.Models.PostModels
         public string Title { get; set; }
         public string Body { get; set; }
         public virtual Student Student { get; set; }
+        public int StudentId { get; set; }
         public virtual ApplicationUser Instructor { get; set; }
         public string StudentName { get; set; }
         public string InstructorName { get; set; }

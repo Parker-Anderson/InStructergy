@@ -34,6 +34,15 @@ namespace SchoolBoard.Services
                 return context.SaveChanges() == 1;
             }
         }
+        public async Task Add(Post post)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                context.Posts.Add(post);
+                await context.SaveChangesAsync();
+            }
+        }
+  
         public IEnumerable<PostListItem> GetPosts()
         {
             using (var context = new ApplicationDbContext())

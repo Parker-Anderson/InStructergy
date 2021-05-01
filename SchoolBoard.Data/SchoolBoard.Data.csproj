@@ -172,6 +172,10 @@
     <Compile Include="Migrations\202104301757056_ref.Designer.cs">
       <DependentUpon>202104301757056_ref.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105010041127_usernameenable.cs" />
+    <Compile Include="Migrations\202105010041127_usernameenable.Designer.cs">
+      <DependentUpon>202105010041127_usernameenable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -263,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104301757056_ref.resx">
       <DependentUpon>202104301757056_ref.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105010041127_usernameenable.resx">
+      <DependentUpon>202105010041127_usernameenable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

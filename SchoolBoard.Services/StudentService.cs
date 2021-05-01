@@ -70,6 +70,27 @@ namespace SchoolBoard.Services
               
             }
         }
+        public Student GetStudentEntityById(int id)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var entity =
+                    context
+                    .Students.Include("Posts")
+                    .Single(s => s.Id == id);
+                return new Student
+                {
+                    Id = entity.Id,
+                    Name = entity.Name,
+                    Courses = entity.Courses,
+                    Posts = entity.Posts,
+                    Instructors = entity.Instructors,
+                    GradePointAverage = entity.GradePointAverage
+
+                };
+
+            }
+        }
 
         public StudentDetail GetStudentById(int id)
         {
