@@ -25,7 +25,7 @@ namespace SchoolBoard.Services
                 var query =
                     context.Posts
                     .Include("Student")
-                    .Include("Instructor")
+                    .Include("Instructor.Name")
                     .Where(p => p.StudentId == id)
                     .Select(e => new PostListItem
                     {

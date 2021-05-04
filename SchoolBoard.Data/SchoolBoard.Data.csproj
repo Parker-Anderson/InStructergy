@@ -63,6 +63,10 @@
     <Compile Include="Migrations\202105040311454_newinitialmigration.Designer.cs">
       <DependentUpon>202105040311454_newinitialmigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105041908518_studentgpa.cs" />
+    <Compile Include="Migrations\202105041908518_studentgpa.Designer.cs">
+      <DependentUpon>202105041908518_studentgpa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105040311454_newinitialmigration.resx">
       <DependentUpon>202105040311454_newinitialmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105041908518_studentgpa.resx">
+      <DependentUpon>202105041908518_studentgpa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
