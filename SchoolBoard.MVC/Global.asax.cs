@@ -1,4 +1,5 @@
 using SchoolBoard.Data;
+using SchoolBoard.Data.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace SchoolBoard.MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             ApplicationDbContext context = new ApplicationDbContext();
+            IdentityHelper.SeedIdentities(context);
            
         }
     }
