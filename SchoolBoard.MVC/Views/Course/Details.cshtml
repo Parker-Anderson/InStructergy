@@ -1,26 +1,62 @@
 ﻿@model SchoolBoard.Models.CourseModels.CourseDetail
 
 <h2>@Model.CourseName</h2>
-@if (Model.Students.Any())
-{
-    <table class="table-bordered" id="courseStudentList">
-        <tbody>
-            @foreach (var student in Model.Students)
+@{ if (Model.Students.Any())
+    {
+        <h3>Satisfactory Progress</h3>
+        foreach (var student in Model.Students)
+        {
+
+
+
+            if (student.GPA >= 2.5)
             {
-                <tr>
-                    <td>
-                        <a href="~/Student/Details/@student.Id">
-                            @student.Name
-                        </a>
-                    </td>
-                </tr>
+
+                <table class="table-hover" id="badStudentList">
+
+                    <tbody>
+
+
+                        <tr>
+                            <td>
+                                <a href="~/Student/Details/@student.Id">
+                                    @student.Name
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
             }
-        </tbody>
-    </table>
+        }
+    }
 }
-else
-{
-    <div>
-        <h2>There are no students added to this course.</h2>
-    </div>
+<h3>Need Remediation</h3>
+@{foreach (var student in Model.Students)
+    {
+
+        if (student.GPA < 2.5)
+
+        {
+
+            <table class="table-hover" id="goodStudentList">
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="~/Student/Details/@student.Id">
+                                @student.Name
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        }
+    }
 }
+
+
+
+
