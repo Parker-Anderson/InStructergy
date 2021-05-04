@@ -13,7 +13,7 @@ namespace SchoolBoard.Models.PostModels
         public int Id { get { using (var context = new ApplicationDbContext()) { return context.Posts.Count() + 1; } } }
         public int StudentId { get { return Student.Id; } }
         public virtual Student Student { get; set; }
-
+        public string MyName { get; set; }
 
         public string Title { get; set; }
         public string Body { get; set; }

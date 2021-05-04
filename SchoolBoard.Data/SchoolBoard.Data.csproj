@@ -59,17 +59,9 @@
     <Compile Include="DataModels\Student.cs" />
     <Compile Include="Helpers\IdentityHelper.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202105040311454_newinitialmigration.cs" />
-    <Compile Include="Migrations\202105040311454_newinitialmigration.Designer.cs">
-      <DependentUpon>202105040311454_newinitialmigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105041908518_studentgpa.cs" />
-    <Compile Include="Migrations\202105041908518_studentgpa.Designer.cs">
-      <DependentUpon>202105041908518_studentgpa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105042050432_fullname.cs" />
-    <Compile Include="Migrations\202105042050432_fullname.Designer.cs">
-      <DependentUpon>202105042050432_fullname.cs</DependentUpon>
+    <Compile Include="Migrations\202105042249536_InitialMigration.cs" />
+    <Compile Include="Migrations\202105042249536_InitialMigration.Designer.cs">
+      <DependentUpon>202105042249536_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,14 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105040311454_newinitialmigration.resx">
-      <DependentUpon>202105040311454_newinitialmigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105041908518_studentgpa.resx">
-      <DependentUpon>202105041908518_studentgpa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105042050432_fullname.resx">
-      <DependentUpon>202105042050432_fullname.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105042249536_InitialMigration.resx">
+      <DependentUpon>202105042249536_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
