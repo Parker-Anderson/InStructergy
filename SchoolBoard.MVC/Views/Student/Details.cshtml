@@ -1,6 +1,9 @@
 ﻿@model SchoolBoard.Models.StudentModels.StudentDetail
 
-<h1>SchoolBoard for @Model.</h1>
+<h1>SchoolBoard for @Model.Name</h1>
+
+
+<h4>Student GPA: @Model.GPA</h4>
 
 <table class="table-bordered" id="postsTable">
     <tbody>
@@ -9,7 +12,9 @@
             foreach (var post in Model.Posts)
             {
                 <tr>
-
+                    <td>
+                        @post.MyName
+                    </td>
                     <td>
                         @post.Title
                     </td>

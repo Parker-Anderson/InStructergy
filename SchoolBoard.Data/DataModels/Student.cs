@@ -12,5 +12,6 @@ namespace SchoolBoard.Data.DataModels
         public string Name { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
+        public double GPA { get; set; }
     }
 }

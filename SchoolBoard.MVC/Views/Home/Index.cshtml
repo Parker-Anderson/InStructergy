@@ -8,7 +8,7 @@
     <h3>Welcome To SchoolBoard</h3>
 }
 <h3>
-    Hello @User.Identity.Name!
+    Hello @ViewData["FullName"]!
 </h3>
 <div>
     @{ if (User.Identity.IsAuthenticated)

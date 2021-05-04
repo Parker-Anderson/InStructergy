@@ -11,12 +11,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SchoolBoard.Data;
 using SchoolBoard.MVC;
+using SchoolBoard.MVC.Controllers;
 using SchoolBoard.MVC.Models;
 
 namespace SchoolBoard.Web.Controllers
 {
     [Authorize]
-public class AccountController : Controller
+public class AccountController : ApplicationBaseController
 {
     private ApplicationSignInManager _signInManager;
     private ApplicationUserManager _userManager;
@@ -169,7 +170,7 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
-            var user = new ApplicationUser { UserName = model.Email, Name = model.Name, Email = model.Email };
+            var user = new ApplicationUser { UserName = model.Email, FullName = model.FullName, Email = model.Email };
             var result = await UserManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {

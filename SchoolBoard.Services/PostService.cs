@@ -25,15 +25,17 @@ namespace SchoolBoard.Services
                 var query =
                     context.Posts
                     .Include("Student")
-                    .Include("Instructor")
+                    .Include("Instructor.Name")
                     .Where(p => p.StudentId == id)
                     .Select(e => new PostListItem
                     {
                         Id = e.Id,
                         Instructor = e.Instructor,
+                        MyName = e.MyName,
                         Title = e.Title,
                         Body = e.Body,
                         Created = e.Created
+                        
                     });
                 return query.ToArray();
             }
@@ -53,6 +55,7 @@ namespace SchoolBoard.Services
                     InstructorId = entity.InstructorId,
                     Student = entity.Student,
                     StudentId = entity.StudentId,
+                    MyName = entity.MyName,
                     Title = entity.Title,
                     Body = entity.Body,
                     Created = entity.Created
@@ -70,6 +73,7 @@ namespace SchoolBoard.Services
                     Id = model.Id,
                     StudentId = student.Id,
                     InstructorId = _userId.ToString(),
+                    MyName = model.MyName,
                     Title = model.Title,
                     Body = model.Body,
                     Created = DateTime.Now,
