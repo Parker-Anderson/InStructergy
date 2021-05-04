@@ -72,7 +72,8 @@ namespace SchoolBoard.Services
                 {
                     Id = entity.Id,
                     Name = entity.Name,
-                    Posts = entity.Posts
+                    Posts = entity.Posts,
+                    GPA = entity.GPA
 
                 };
             }
@@ -92,7 +93,8 @@ namespace SchoolBoard.Services
                 {
                     Id = entity.Id,
                     Name = entity.Name,
-                    Posts = entity.Posts
+                    Posts = entity.Posts,
+                    GPA = entity.GPA
 
                 };
             }

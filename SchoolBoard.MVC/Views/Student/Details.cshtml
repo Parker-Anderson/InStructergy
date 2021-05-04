@@ -2,13 +2,16 @@
 
 <h1>SchoolBoard for @Model.Name</h1>
 
+
+<h4>Student GPA: @Model.GPA</h4>
+
 <table class="table-bordered" id="postsTable">
     <tbody>
         @if (Model.Posts.Any())
         {
             foreach (var post in Model.Posts)
             {
-               <tr>
+                <tr>
                     <td>
                         @post.Title
                     </td>
