@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using SchoolBoard.Models.CourseModels;
+using SchoolBoard.MVC.Controllers;
 using SchoolBoard.Services;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Web.Mvc;
 
 namespace SchoolBoard.Web.Controllers
 {
-    public class CourseController : Controller
+    public class CourseController : ApplicationBaseController
     {
         // GET: Course
         public ActionResult Index()

@@ -72,7 +72,7 @@ namespace SchoolBoard.MVC.Models
         [Required]
         [DataType(DataType.Text)]
         [Display(Name = "Name")]
-        public string Name { get; set; }
+        public string FullName { get; set; }
 
 
         [Required]
