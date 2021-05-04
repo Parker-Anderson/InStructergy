@@ -1,3 +1,4 @@
+
 namespace SchoolBoard.Data.Migrations
 {
     using SchoolBoard.Data.DataModels;
