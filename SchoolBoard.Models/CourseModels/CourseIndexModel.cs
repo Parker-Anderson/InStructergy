@@ -1,4 +1,4 @@
-﻿using SchoolBoard.Data.DomainModels;
+﻿using SchoolBoard.Models.CourseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace SchoolBoard.Models.CourseModels
 {
     public class CourseIndexModel
     {
-        public IEnumerable<CourseListItem> Courses { get; set; }
+        public virtual IEnumerable<CourseListItem> Courses { get; set; }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
-using SchoolBoard.Data.DomainModels;
 using SchoolBoard.Models.CourseModels;
-using SchoolBoard.Models.StudentModels;
 using SchoolBoard.Services;
 using System;
 using System.Collections.Generic;
@@ -9,80 +7,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SchoolBoard.MVC.Controllers
+namespace SchoolBoard.Web.Controllers
 {
     public class CourseController : Controller
     {
-        private readonly Guid _userId;
-       
-        
-        [Authorize]
-        // GET: CourseModels
+        // GET: Course
         public ActionResult Index()
         {
             var _courseService = new CourseService(Guid.Parse(User.Identity.GetUserId()));
-            var courses = _courseService.GetCourses().Select(e => new CourseListItem
+            var model = _courseService.GetCoursesByUser().Select(c => new CourseListItem
             {
-                Id = e.Id,
-                Name = e.Name,
-                Instructor = e.Instructor
+                Id = c.Id,
+                Instructor = c.Instructor,
+                Students = c.Students,
+                CourseName = c.CourseName
             });
-            var model = new CourseIndexModel()
-            {
-                Courses = courses
-            };
+
             return View(model);
-
-        }
-        public ActionResult Student(int id)
-        {
-            var _courseService = new CourseService(Guid.Parse(User.Identity.GetUserId()));
-            var _studentService = new StudentService(Guid.Parse(User.Identity.GetUserId()));
-            var course = _courseService.GetCourseById(id);
-            var students = course.Students;
-            
-            var studentList = students.Select(student => new StudentListItem
-            {
-                Id = student.Id,
-                Name = student.Name,
-                
-
-            });
-        
-            var courseModel = new CourseListItem
-            {
-                Id = course.Id,
-                Name = course.Name,
-                Instructor = course.Instructor,
-                InstructorId = course.InstructorId
-            };
-            var model = new CourseStudentModel
-            {
-                Course = courseModel,
-                Students = studentList
-            };
-            return View(model);
-                
-                
-                
-             
-        }
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(CourseCreate model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-            var service = new CourseService(Guid.Parse(User.Identity.GetUserId()));
-            service.CreateCourse(model);
-            return RedirectToAction("Index");
         }
         public ActionResult Details(int id)
         {
@@ -90,17 +31,5 @@ namespace SchoolBoard.MVC.Controllers
             var model = service.GetCourseById(id);
             return View(model);
         }
-        private CourseListItem courseStudentListModel(Student student, int id)
-        {
-            var course = student.Courses.Single(c => c.Id == id);
-            return new CourseListItem
-            {
-                Id = course.Id,
-                Name = course.Name,
-
-            };
-        }
-
-
     }
 }

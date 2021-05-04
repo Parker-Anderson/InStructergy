@@ -1,0 +1,26 @@
+﻿@model SchoolBoard.Models.CourseModels.CourseDetail
+
+<h2>@Model.CourseName</h2>
+@if (Model.Students.Any())
+{
+    <table class="table-bordered" id="courseStudentList">
+        <tbody>
+            @foreach (var student in Model.Students)
+            {
+                <tr>
+                    <td>
+                        <a href="~/Student/Details/@student.Id">
+                            @student.Name
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div>
+        <h2>There are no students added to this course.</h2>
+    </div>
+}

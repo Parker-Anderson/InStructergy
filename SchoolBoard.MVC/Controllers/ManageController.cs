@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SchoolBoard.MVC.Models;
+using SchoolBoard.Web.Controllers;
 
 namespace SchoolBoard.MVC.Controllers
 {

@@ -1,5 +1,4 @@
-﻿using SchoolBoard.Data;
-using SchoolBoard.Data.DomainModels;
+﻿using SchoolBoard.Data.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +10,7 @@ namespace SchoolBoard.Models.CourseModels
     public class CourseDetail
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public Guid InstructorGuid { get; set; }
-        public string InstructorId { get; set; }
-        public virtual ApplicationUser Instructor { get; set; }
-        public virtual IEnumerable<Student> Students { get; set; }
-
-
-
+        public string CourseName { get; set; }
+        public virtual ICollection<SchoolBoard.Data.DataModels.Student> Students { get; set; }
     }
 }

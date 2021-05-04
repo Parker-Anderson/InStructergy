@@ -1,6 +1,7 @@
 ﻿using SchoolBoard.Data;
-using SchoolBoard.Data.DomainModels;
+using SchoolBoard.Data.DataModels;
 using SchoolBoard.Models.CourseModels;
+using SchoolBoard.Models.StudentModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,81 +12,92 @@ namespace SchoolBoard.Services
 {
     public class CourseService
     {
-        private readonly Guid _instructorId;
-        
+        private readonly Guid _userId;
+
         public CourseService(Guid userId)
         {
-           
-            _instructorId = userId;
+            _userId = userId;
         }
-        public IEnumerable<CourseListItem> GetCourses()
+
+        public ICollection<CourseListItem> GetCoursesByUser()
         {
-            using(var context = new ApplicationDbContext())
+            using (var context = new ApplicationDbContext())
             {
                 var query =
                     context
-                    .Courses.Include("Students")
-                    .Select(q => new CourseListItem
+                    .Courses
+                    .Include("Students")
+                    .Where(c => c.InstructorId == _userId.ToString())
+                    .Select(e => new CourseListItem
                     {
-                        Id = q.Id,
-                        Name = q.Name,
-                        Instructor = q.Instructor,
-                        InstructorId = q.InstructorId
+                        Id = e.Id,
+                        CourseName = e.CourseName,
+                        Instructor = e.Instructor,
+                        Students = e.Students,
                     });
                 return query.ToArray();
-                       
             }
         }
-        public bool CreateCourse(CourseCreate model)
-        {
-            var ctx = new ApplicationDbContext();
-            var _studentService = new StudentService(_instructorId);
-            var _courseService = new CourseService(_instructorId);
-            var entity =
-                new Course()
-                {
-                    InstructorGuid = Guid.Parse(model.Instructor.Id),
-                    Id = model.Id,
-                    Name = model.Name,
-                    Instructor = model.Instructor
-                };
-
-            using (var context = new ApplicationDbContext())
-            {
-                context.Courses.Add(entity);
-                return context.SaveChanges() == 1;
-            }
-        }
-        public Course GetCourseById(int id)
+        // --> Can now assign list of courses based on logged in Instructor.  Next will be to add more teachers and courses and wrap index course listings into href links to Course Detail page
+        public CourseDetail GetCourseById(int id)
         {
             using (var context = new ApplicationDbContext())
             {
-               var entity =
+                var entity =
                     context
                     .Courses.Include("Students")
-                    .Include("Instructor")
-                    .Single(e => e.Id == id);
-                return entity;
+                    .Single(c => c.Id == id);
+
+                return new CourseDetail
+                {
+                    Id = entity.Id,
+                    CourseName = entity.CourseName,
+                    Students = entity.Students
+                };
+
             }
         }
-        public bool AddStudent(Student student, int id)
+
+        public StudentDetail GetStudentById(int id)
         {
-            
-           
-            
             using (var context = new ApplicationDbContext())
             {
 
-                var course = context.Courses.Single(c => c.Id == id);
-                course.Students.ToList().Add(student);
-                return context.SaveChanges() == 1;
+                var entity =
+                    context
+                    .Students
+                    .Include("Posts")
+                    .SingleOrDefault(s => s.Id == id);
+                return new StudentDetail
+                {
+                    Id = entity.Id,
+                    Name = entity.Name,
+                    Posts = entity.Posts
 
-               
+                };
             }
+        }
+        public StudentDetail GetStudentByName(string name)
+        {
+            using (var context = new ApplicationDbContext())
+            {
 
+                var entity =
+                    context
+                    .Students
+                    .Include("Posts")
+                    .Where(s => s.Name == name)
+                    .SingleOrDefault(s => s.Name == name);
+                return new StudentDetail
+                {
+                    Id = entity.Id,
+                    Name = entity.Name,
+                    Posts = entity.Posts
+
+                };
+            }
         }
 
-
     }
-   
 }
+

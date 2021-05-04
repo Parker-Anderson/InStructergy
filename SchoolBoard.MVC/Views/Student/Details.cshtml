@@ -1,32 +1,27 @@
-﻿@model  SchoolBoard.Models.StudentModels.StudentDetail
+﻿@model SchoolBoard.Models.StudentModels.StudentDetail
 
-<h1>SchoolBoard for @Model.Name</h1>
+<h1>SchoolBoard for @Model.</h1>
 
-<span id="headingButton">
-   <a href="~/Post/Create/@Model.Posts.Count()" asp-controller="Post" asp-action="CreatePost">
-        Create new Post
-    </a>
-</span>
-
-
-@*<table>
-        <tbody>
-
-              @Html.Partial("CreatePost", new SchoolBoard.Models.PostModels.PostCreate())
-        </tbody>
-    </table>
-
-    <table>
-        @foreach (var post in Model.Posts)
+<table class="table-bordered" id="postsTable">
+    <tbody>
+        @if (Model.Posts.Any())
         {
-        <tbody>
-        <tr>
-            <td>
-                @post.Title
-            </td>
-            <td>
-                @post.Body
-            </td>
-            </tr>
-        </tbody>}*@
-<!--</table>-->
+            foreach (var post in Model.Posts)
+            {
+                <tr>
+
+                    <td>
+                        @post.Title
+                    </td>
+                    <td>
+                        @post.Body
+                    </td>
+                    <td>
+                        @post.Created
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<div>@Html.ActionLink("New Post", "Create", "Post")</div>

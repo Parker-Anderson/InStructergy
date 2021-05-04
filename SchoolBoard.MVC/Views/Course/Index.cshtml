@@ -1,18 +1,24 @@
-﻿@model SchoolBoard.Models.CourseModels.CourseIndexModel
+﻿@model IEnumerable<SchoolBoard.Models.CourseModels.CourseListItem>
 
-<h2>Courses</h2>
+@{
+    ViewBag.Title = "My Courses";
+}
+
+<h2>My Courses</h2>
+
+
 <table class="table table-hover" id="courseIndexTable">
-    <tbody>
-        @foreach(var course in Model.Courses)
-            {
-                <tr>
-                    <td>
-                        <a href="~/Course/Student/@course.Id" asp-controller="Course" asp-action="Details" asp-route-id="@course.Id">
-                            @course.Name
-                        </a>
-                        
-                    </td>
-                </tr>
-            }
-    </tbody>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="~/Course/Details/@item.Id" asp-controller="Course" asp-action="Details" asp-route-id="@item.Id">
+                    @item.CourseName
+                </a>
+            </td>
+        </tr>
+    }
+
 </table>

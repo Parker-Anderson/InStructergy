@@ -54,30 +54,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CourseModels\CourseCreate.cs" />
     <Compile Include="CourseModels\CourseDetail.cs" />
     <Compile Include="CourseModels\CourseIndexModel.cs" />
     <Compile Include="CourseModels\CourseListItem.cs" />
-    <Compile Include="CourseModels\CourseStudentListModel.cs" />
-    <Compile Include="CourseModels\CourseStudentModel.cs" />
-    <Compile Include="PostModels\NewPostModel.cs" />
     <Compile Include="PostModels\PostCreate.cs" />
     <Compile Include="PostModels\PostDetail.cs" />
-    <Compile Include="PostModels\PostIndexModel.cs" />
     <Compile Include="PostModels\PostListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentModels\MyStudentListItem.cs" />
-    <Compile Include="StudentModels\StudentCreate.cs" />
     <Compile Include="StudentModels\StudentDetail.cs" />
-    <Compile Include="StudentModels\StudentListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PostReplyModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SchoolBoard.Data\SchoolBoard.Data.csproj">
       <Project>{67DBCF10-CC42-4167-9893-267F72151D97}</Project>

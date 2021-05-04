@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
@@ -7,8 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using SchoolBoard.Data.DomainModels;
-using SchoolBoard.Data.Migrations;
+using SchoolBoard.Data.DataModels;
 
 namespace SchoolBoard.Data
 {
@@ -16,7 +14,8 @@ namespace SchoolBoard.Data
     public class ApplicationUser : IdentityUser
     {
         public string Name { get; set; }
-        public virtual IEnumerable<Course> Courses { get; set; }
+        public ICollection<Course> Courses { get; set; }
+        public ICollection<Student> Students { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -40,34 +39,28 @@ namespace SchoolBoard.Data
         public DbSet<Course> Courses { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Post> Posts { get; set; }
-        public DbSet<PostReply> Replies { get; set; }
-       // public DbSet<CourseStudents> CourseStudents { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
-           .Conventions
-           .Remove<PluralizingTableNameConvention>();
-
+                .Conventions
+                .Remove<PluralizingTableNameConvention>();
             modelBuilder
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
             modelBuilder
                 .Entity<Course>()
-                .HasMany<Student>(s => (ICollection<Student>)s.Students)
-                .WithMany(c => (ICollection<Course>)c.Courses)
+                .HasMany<Student>(s => s.Students)
+                .WithMany(c => c.Courses)
                 .Map(cs =>
                 {
-                    cs.MapLeftKey("CourseRefId");
-                    cs.MapRightKey("StudentRefId");
+                    cs.MapLeftKey("CourseId");
+                    cs.MapRightKey("StudentId");
                     cs.ToTable("CourseStudent");
                 });
-          
-                
-                
-        }
 
-        
+
+        }
     }
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
     {
@@ -83,4 +76,5 @@ namespace SchoolBoard.Data
             HasKey(iur => iur.UserId);
         }
     }
+
 }
