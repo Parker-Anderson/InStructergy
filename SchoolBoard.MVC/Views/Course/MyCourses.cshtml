@@ -6,14 +6,14 @@
 
 <h2>My Courses</h2>
 
-<table class="table table-hover" id="courseIndexTable">
+<table class="table-hover" id="courseIndexTable">
 
 
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                <a href="~/Course/Details/@item.Id" asp-controller="Course" asp-action="Details" asp-route-id="@item.Id">
+                <a style="color: ghostwhite" href="~/Course/Details/@item.Id" asp-controller="Course" asp-action="Details" asp-route-id="@item.Id">
                     @item.CourseName
                 </a>
             </td>

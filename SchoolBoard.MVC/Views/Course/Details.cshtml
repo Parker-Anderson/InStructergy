@@ -12,14 +12,14 @@
             if (student.GPA >= 2.5)
             {
 
-                <table class="table-hover" id="badStudentList">
+                <table class="table-hover" id="studentList">
 
                     <tbody>
 
 
                         <tr>
                             <td>
-                                <a href="~/Student/Details/@student.Id">
+                                <a style="color: ghostwhite" href="~/Student/Details/@student.Id">
                                     @student.Name
                                 </a>
                             </td>
@@ -39,12 +39,12 @@
 
         {
 
-            <table class="table-hover" id="goodStudentList">
+            <table class="table-hover" id="studentList">
 
                 <tbody>
                     <tr>
                         <td>
-                            <a href="~/Student/Details/@student.Id">
+                            <a style="color: ghostwhite" href="~/Student/Details/@student.Id">
                                 @student.Name
                             </a>
                         </td>

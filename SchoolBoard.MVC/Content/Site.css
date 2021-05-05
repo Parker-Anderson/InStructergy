@@ -1,9 +1,10 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 50px 0 20px 0;
     padding-bottom: 20px;
     background-color:darkslategray;
-    background-image: url(../Images/green-chalkboard-background.jpg);
-    background-size:cover;
+    background-size: cover;
+    background-image: url(../Images/ChalkBoard.jpg);
+  
 
     
     background-repeat:no-repeat;
@@ -12,11 +13,31 @@
     font-size:initial;
     font-style:italic;
 }
+.navbar{
+    box-shadow: 0 5px 4px -6px #000;
+   
+}
+
+.navbar li{
+    font-weight: normal;
+}
+
+
+.navLogo {
+    background-image: url("../Images/SchoolBoard_Logo.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-right: 16px;
+    width: 150px;
+    margin-right: 12px;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 50px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

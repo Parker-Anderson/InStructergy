@@ -192,7 +192,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\ChalkBoard.jpg" />
     <Content Include="Images\green-chalkboard-background.jpg" />
+    <Content Include="Images\pexels-markus-spiske-131773.jpg" />
+    <Content Include="Images\pexels-photo-2675047.jpeg" />
     <Content Include="Images\SchoolBoard_Logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

@@ -2,10 +2,11 @@
 @{
     ViewBag.Title = "SchoolBoard";
 }
-<h2>SchoolBoard</h2>
+
 @if (!User.Identity.IsAuthenticated)
 {
-    <h3>Welcome To SchoolBoard</h3>
+    <h3>Welcome To SchoolBoard!</h3>
+    <h6>Please login or register a new Instructor account.</h6>
 }
 <h3>
     Hello @ViewData["FullName"]!
@@ -14,10 +15,10 @@
     @{ if (User.Identity.IsAuthenticated)
         {
             <p>
-                @Html.ActionLink("Courses", "Index", "Course")
+                @Html.ActionLink("Courses", "Index", "Course", null, new { id = "pageLink", style = "color: white" })
             </p>
             <p>
-                @Html.ActionLink("My Courses", "MyCourses", "Course")
+                @Html.ActionLink("My Courses", "MyCourses", "Course", null, new { id = "pageLink", style = "color: white" })
             </p>
         }
     }
