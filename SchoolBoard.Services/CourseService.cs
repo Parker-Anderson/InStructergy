@@ -19,6 +19,25 @@ namespace SchoolBoard.Services
             _userId = userId;
         }
 
+        public ICollection<CourseListItem> GetCourses()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var query =
+                    context
+                    .Courses
+                    .Include("Students")
+                    .Select(e => new CourseListItem
+                    {
+                        Id = e.Id,
+                        CourseName = e.CourseName,
+                        Instructor = e.Instructor,
+                        Students = e.Students,
+                    });
+                return query.ToArray();
+            }
+        }
+
         public ICollection<CourseListItem> GetCoursesByUser()
         {
             using (var context = new ApplicationDbContext())
@@ -27,7 +46,7 @@ namespace SchoolBoard.Services
                     context
                     .Courses
                     .Include("Students")
-                    .Where(c => c.InstructorId == _userId.ToString())
+                    .Where(c => c.Instructor.Id == _userId.ToString())
                     .Select(e => new CourseListItem
                     {
                         Id = e.Id,

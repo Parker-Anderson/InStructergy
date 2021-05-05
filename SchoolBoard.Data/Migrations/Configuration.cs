@@ -64,12 +64,12 @@ namespace SchoolBoard.Data.Migrations
 
             context.Courses.AddOrUpdate(
                 c => c.CourseName,
-                new DataModels.Course { CourseName = "Computer Science", Instructor = context.Users.Where(u => u.FullName == "Mrs. Smith").SingleOrDefault(), Students = new List<Student>() { bill, amanda, kyle, heather, james, leiah, mario, dakota, todd } },
-                new DataModels.Course { CourseName = "Art", Instructor = context.Users.Where(u => u.FullName == "Mrs. Robinson").SingleOrDefault(), Students = new List<Student>() { bill, amanda, kyle, heather, jessica, joey, luke, leiah, nicholas, rachel, pete } },
-                new DataModels.Course { CourseName = "History", Instructor = context.Users.Where(u => u.FullName == "Mrs. Smith").SingleOrDefault(), Students = new List<Student>() { heather, james, leiah, jessica, joey, pete, dakota, bill, amanda } },
-                new DataModels.Course { CourseName = "Social Studies", Instructor = context.Users.Where(u => u.FullName == "Mr. Joyce").SingleOrDefault(), Students = new List<Student>() { joey, jessica, pete, mario, todd, amanda, rachel } },
-                new DataModels.Course { CourseName = "Physics", Instructor = context.Users.Where(u => u.FullName == "Mrs. Smith").SingleOrDefault(), Students = new List<Student>() { heather, kyle, mario, joey, todd, dakota, bill } },
-                new DataModels.Course { CourseName = "Geography", Instructor = context.Users.Where(u => u.FullName == "Mr Joyce").SingleOrDefault(), Students = new List<Student>() { nicholas, rachel, pete, jessica, leiah, luke } });
+                new DataModels.Course { CourseName = "Computer Science", Instructor = context.Users.Where(u => u.Email == "Robinson@email.com").SingleOrDefault(), Students = new List<Student>() { bill, amanda, kyle, heather, james, leiah, mario, dakota, todd } },
+                new DataModels.Course { CourseName = "Art", Instructor = context.Users.Where(u => u.Email == "Robinson@email.com").SingleOrDefault(), Students = new List<Student>() { bill, amanda, kyle, heather, jessica, joey, luke, leiah, nicholas, rachel, pete } },
+                new DataModels.Course { CourseName = "History", Instructor = context.Users.Where(u => u.Email == "smith@email.com").SingleOrDefault(), Students = new List<Student>() { heather, james, leiah, jessica, joey, pete, dakota, bill, amanda } },
+                new DataModels.Course { CourseName = "Social Studies", Instructor = context.Users.Where(u => u.Email == "Robinson@email.com").SingleOrDefault(), Students = new List<Student>() { joey, jessica, pete, mario, todd, amanda, rachel } },
+                new DataModels.Course { CourseName = "Physics", Instructor = context.Users.Where(u => u.Email == "jones@email.com").SingleOrDefault(), Students = new List<Student>() { heather, kyle, mario, joey, todd, dakota, bill } },
+                new DataModels.Course { CourseName = "Geography", Instructor = context.Users.Where(u => u.Email == "smith@email.com").SingleOrDefault(), Students = new List<Student>() { nicholas, rachel, pete, jessica, leiah, luke } });
 
         }
     }

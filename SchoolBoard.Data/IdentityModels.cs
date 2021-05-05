@@ -28,7 +28,7 @@ namespace SchoolBoard.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("defaultConnection", throwIfV1Schema: false)
         {
         }
 

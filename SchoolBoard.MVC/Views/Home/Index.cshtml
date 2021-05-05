@@ -14,7 +14,10 @@
     @{ if (User.Identity.IsAuthenticated)
         {
             <p>
-                @Html.ActionLink("My Courses", "Index", "Course")
+                @Html.ActionLink("Courses", "Index", "Course")
+            </p>
+            <p>
+                @Html.ActionLink("My Courses", "MyCourses", "Course")
             </p>
         }
     }

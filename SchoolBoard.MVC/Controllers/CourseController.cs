@@ -16,7 +16,7 @@ namespace SchoolBoard.Web.Controllers
         public ActionResult Index()
         {
             var _courseService = new CourseService(Guid.Parse(User.Identity.GetUserId()));
-            var model = _courseService.GetCoursesByUser().Select(c => new CourseListItem
+            var model = _courseService.GetCourses().Select(c => new CourseListItem
             {
                 Id = c.Id,
                 Instructor = c.Instructor,
@@ -24,6 +24,18 @@ namespace SchoolBoard.Web.Controllers
                 CourseName = c.CourseName
             });
 
+            return View(model);
+        }
+        public ActionResult MyCourses()
+        {
+            var _courseService = new CourseService(Guid.Parse(User.Identity.GetUserId()));
+            var model = _courseService.GetCoursesByUser().Select(c => new CourseListItem
+            {
+                Id = c.Id,
+                Instructor = c.Instructor,
+                Students = c.Students,
+                CourseName = c.CourseName,
+            });
             return View(model);
         }
         public ActionResult Details(int id)
