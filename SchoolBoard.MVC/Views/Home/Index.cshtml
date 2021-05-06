@@ -3,17 +3,20 @@
     ViewBag.Title = "SchoolBoard";
 }
 
+
+
 @if (!User.Identity.IsAuthenticated)
 {
     <h3>Welcome To SchoolBoard!</h3>
     <h6>Please login or register a new Instructor account.</h6>
 }
-<h3>
-    Hello @ViewData["FullName"]!
-</h3>
+
 <div>
     @{ if (User.Identity.IsAuthenticated)
         {
+            <h3>
+                Hello @ViewData["FullName"]!
+            </h3>
             <p>
                 @Html.ActionLink("Courses", "Index", "Course", null, new { id = "pageLink", style = "color: white" })
             </p>

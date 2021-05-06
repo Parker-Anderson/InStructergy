@@ -33,6 +33,11 @@
     margin-right: 12px;
 }
 
+.postAuthor{
+    font-weight:900;
+    text-decoration:underline;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;

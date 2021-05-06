@@ -59,6 +59,7 @@
     <Compile Include="CourseModels\CourseListItem.cs" />
     <Compile Include="PostModels\PostCreate.cs" />
     <Compile Include="PostModels\PostDetail.cs" />
+    <Compile Include="PostModels\PostEdit.cs" />
     <Compile Include="PostModels\PostListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentModels\StudentDetail.cs" />

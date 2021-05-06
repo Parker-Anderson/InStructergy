@@ -5,26 +5,52 @@
 
 <h4>Student GPA: @Model.GPA</h4>
 
-<table class="table-bordered" id="postsTable">
+<div class="container body-content">
+    <div class="row sectionHeader">
+
+    </div>
+</div>
+
+<table class="table table-responsive" id="postsTable">
     <tbody>
         @if (Model.Posts.Any())
         {
             foreach (var post in Model.Posts)
             {
-                <tr>
-                    <td>
-                        @post.MyName
-                    </td>
-                    <td>
-                        @post.Title
-                    </td>
-                    <td>
-                        @post.Body
-                    </td>
-                    <td>
-                        @post.Created
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                <div class="postAuthor" style="text-decoration:underline; font-weight:700;">
+                    @post.MyName
+                </div>
+            </td>
+            <td>
+                <div class="postTitle">
+                    @post.Title
+                </div>
+            </td>
+            <td>
+                <div class="postBody">
+                    @post.Body
+                </div>
+            </td>
+            <td>
+                <div class="postCreated">
+                    @post.Created
+                </div>
+            </td>
+
+            <td>
+                <a style="color: ghostwhite" href="~/Post/Edit/@post.Id">
+                    Edit
+                </a>
+            </td>
+            <td>
+                <a style="color: ghostwhite" href="~/Post/Delete/@post.Id">
+                    Delete
+                </a>
+            </td>
+
+        </tr>
             }
         }
     </tbody>
