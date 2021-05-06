@@ -60,7 +60,7 @@ Resources
 
 * [Microsoft Documentation Pages for ASP.NET MVC](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs)
 
-* [ASP.NET Razor C# Syntax - W3Schools](https://www.codeproject.com/articles/993974/messageboardapp-using-mvc)
+* [ASP.NET Razor C# Syntax - W3Schools](https://www.w3schools.com/asp/razor_syntax.asp)
 
 * The fantastic demo series [Full Stack ASP.NET Core MVC Forum Build](https://www.youtube.com/playlist?list=PL3_YUnRN3Uhiz2HomrXKcaEW6b3pDhKTX)
 
