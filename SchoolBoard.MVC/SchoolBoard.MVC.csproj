@@ -196,10 +196,12 @@
     <Content Include="Images\green-chalkboard-background.jpg" />
     <Content Include="Images\pexels-markus-spiske-131773.jpg" />
     <Content Include="Images\pexels-photo-2675047.jpeg" />
+    <Content Include="Images\schoolboardsplash.jpeg" />
     <Content Include="Images\SchoolBoard_Logo.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\SchoolBoardMVC20210504211645 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\SchoolBoardMVC20210505180533 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -248,6 +250,8 @@
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Course\MyCourses.cshtml" />
+    <Content Include="Views\Post\Edit.cshtml" />
+    <Content Include="Views\Post\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

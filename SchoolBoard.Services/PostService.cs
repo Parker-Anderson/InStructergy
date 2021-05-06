@@ -84,6 +84,34 @@ namespace SchoolBoard.Services
                 return context.SaveChanges() == 1;
             }
         }
+        public bool UpdatePost(PostEdit model)
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                var entity =
+                    context
+                    .Posts
+                    .Single(p => p.Id == model.Id);
+                entity.Title = model.Title;
+                entity.Body = model.Body;
+                entity.Created = DateTime.Now;
+                return context.SaveChanges() == 1;
+            }
+            
+        }
+        public bool DeletePost(int id)
+        {
+            using(var context = new ApplicationDbContext())
+            {
+                var entity =
+                    context
+                    .Posts
+                    .Single(p => p.Id == id);
+                context.Posts.Remove(entity);
+                return context.SaveChanges() == 1;
+                  
+            }
+        }
     }
 }
 
