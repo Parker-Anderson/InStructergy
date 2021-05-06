@@ -11,7 +11,7 @@ Follow the steps below to install and build the project:
 
 1. Make sure to have both [Microsoft Visual Studio](https://visualstudio.microsoft.com/vs/community/) and [Git](https://git-scm.com/downloads) installed on your PC.
 
-2.. Navigate to the [main repository](https://github.com/Parker-Anderson/SchoolBoard) and copy the text provided by clicking "Code".
+2. Navigate to the [main repository](https://github.com/Parker-Anderson/SchoolBoard) and copy the text provided by clicking "Code".
 
 ![CloneView](https://user-images.githubusercontent.com/58240410/117258630-2bf8ae80-ae1b-11eb-8dc3-166821034199.PNG)
 
