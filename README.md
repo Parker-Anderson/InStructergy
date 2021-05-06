@@ -3,8 +3,12 @@
 A message board-like collaboration tool for educators.
 SchoolBoard is a forum that allows teachers to communicate and work together for the students they share.
 ##
+
 **Installation**
+##
+
 Follow the steps below to install and build the project:
+
 1. Make sure to have both [Microsoft Visual Studio](https://visualstudio.microsoft.com/vs/community/) and [Git](https://git-scm.com/downloads) installed on your PC.
 
 2.. Navigate to the [main repository](https://github.com/Parker-Anderson/SchoolBoard) and copy the text provided by clicking "Code".
@@ -50,6 +54,7 @@ ApplicationUser tables in our new database (these are required by key constraint
 
 ##
 Resources
+##
 
 * The Amazing Instructors and Learning Assistants at [Eleven Fifty Academy](https://elevenfifty.org/)
 
