@@ -62,7 +62,7 @@ Resources
 
 * [ASP.NET Razor C# Syntax - W3Schools](https://www.w3schools.com/asp/razor_syntax.asp)
 
-* The fantastic demo series [Full Stack ASP.NET Core MVC Forum Build](https://www.youtube.com/playlist?list=PL3_YUnRN3Uhiz2HomrXKcaEW6b3pDhKTX)
+* The fantastic demo series from Wes Doyle [Full Stack ASP.NET Core MVC Forum Build](https://www.youtube.com/playlist?list=PL3_YUnRN3Uhiz2HomrXKcaEW6b3pDhKTX)
 
 * Stock Images from [Pexels](https://www.pexels.com/)
 
