@@ -48,12 +48,15 @@ ApplicationUser tables in our new database (these are required by key constraint
   ![StudentDetail](https://user-images.githubusercontent.com/58240410/117258645-2e5b0880-ae1b-11eb-8234-42a1ebd0f807.PNG)
 
 ##Resources
-*
-*
-*
-*
-*
-*
+*The Amazing Instructors and Learning Assistants at [Eleven Fifty Academy](https://elevenfifty.org/)
+*[Microsoft Documentation Pages for ASP.NET MVC](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs)
+*[ASP.NET Razor C# Syntax - W3Schools](https://www.codeproject.com/articles/993974/messageboardapp-using-mvc)
+*The fantastic demo series [Full Stack ASP.NET Core MVC Forum Build](https://www.youtube.com/playlist?list=PL3_YUnRN3Uhiz2HomrXKcaEW6b3pDhKTX)
+*Stock Images from [Pexels](https://www.pexels.com/)
+*[MVC View from a Nested List](https://www.codeproject.com/questions/888725/mvc-view-from-a-nested-list)
+*https://www.codeproject.com/Tips/991663/Displaying-User-Full-Name-instead-of-User-Email-in
+*Jorge Ramon: [How to Seed Users and Roles in an MVC Application](https://jorgeramon.me/2015/how-to-seed-users-and-roles-in-an-asp-net-mvc-application/)
+*[MessageBoardApp Using MVC 5](https://www.codeproject.com/articles/993974/messageboardapp-using-mvc)
 
 
   
