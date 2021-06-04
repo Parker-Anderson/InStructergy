@@ -9,7 +9,7 @@ namespace SchoolBoard.Interfaces
     public interface IStudent
     {
         Student GetById(int id);
-        IEnumerable<Student> GetByCourse();
+        IEnumerable<Student> GetByCourse(int id);
         IEnumerable<Student> GetAll();
         IEnumerable<ApplicationUser> GetActiveInstructors();
 

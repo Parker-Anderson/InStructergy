@@ -4,6 +4,7 @@ using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -34,7 +35,19 @@ namespace SchoolBoard.Services
 
         public Course GetById(int id)
         {
-            throw new NotImplementedException();
+            var course = _context.Courses
+                 .Where(c => c.Id == id)
+                      .Include(c => c.Instructor)
+                      .Include(c => c.Students)
+                            .ThenInclude(s => s.Posts)
+                                .ThenInclude(p => p.Instructor)
+                      .Include(c => c.Students)
+                            .ThenInclude(s => s.Posts)
+                                .ThenInclude(p => p.Replies)
+                                    .ThenInclude(r => r.Instructor)
+                  .FirstOrDefault();
+            return course;
+
         }
 
         public IEnumerable<Course> GetByInstructor()
