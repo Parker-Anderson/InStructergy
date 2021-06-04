@@ -5,10 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="PostModels\**" />
+    <Compile Remove="StudentModels\**" />
+    <EmbeddedResource Remove="PostModels\**" />
+    <EmbeddedResource Remove="StudentModels\**" />
+    <None Remove="PostModels\**" />
+    <None Remove="StudentModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="UserModels\" />
     <Folder Include="PostReplyModels\" />
-    <Folder Include="PostModels\" />
-    <Folder Include="StudentModels\" />
   </ItemGroup>
 
 </Project>
