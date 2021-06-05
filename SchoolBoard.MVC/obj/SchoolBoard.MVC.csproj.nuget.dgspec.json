@@ -175,7 +175,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\SchoolBoard\\SchoolBoard.Data\\SchoolBoard.Data.csproj": {
+                "projectPath": "D:\\SchoolBoard\\SchoolBoard.Data\\SchoolBoard.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

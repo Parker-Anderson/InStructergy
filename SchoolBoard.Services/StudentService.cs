@@ -4,6 +4,7 @@ using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,7 +50,15 @@ namespace SchoolBoard.Services
 
         public Student GetById(int id)
         {
-            throw new NotImplementedException();
+            var student = _context.Students
+                .Where(s => s.Id == id)
+                    .Include(s=>s.Posts)
+                        .ThenInclude(p=>p.Replies)
+                            .ThenInclude(r=>r.Instructor)
+                    .Include(s=>s.Posts)
+                        .ThenInclude(p=>p.Instructor)
+                .FirstOrDefault();
+            return student;
         }
 
         public Task UpdateStudent(int studentId, string Name, bool satisfactoryPerformance, double GPA)

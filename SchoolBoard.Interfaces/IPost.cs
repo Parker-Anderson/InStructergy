@@ -10,7 +10,7 @@ namespace SchoolBoard.Interfaces
     {
         Post GetById(int id);
         IEnumerable<Post> GetAll();
-        IEnumerable<Post> GetFiltered();
+        IEnumerable<Post> GetByAuthor(string id);
         IEnumerable<Post> GetByStudent(int id);
 
         Task Add(Post post);

@@ -7,3 +7,6 @@ D:\SchoolBoard\SchoolBoard.Models\obj\Debug\netcoreapp3.1\SchoolBoard.Models.Ass
 D:\SchoolBoard\SchoolBoard.Models\obj\Debug\netcoreapp3.1\SchoolBoard.Models.csproj.CoreCompileInputs.cache
 D:\SchoolBoard\SchoolBoard.Models\obj\Debug\netcoreapp3.1\SchoolBoard.Models.dll
 D:\SchoolBoard\SchoolBoard.Models\obj\Debug\netcoreapp3.1\SchoolBoard.Models.pdb
+D:\SchoolBoard\SchoolBoard.Models\bin\Debug\netcoreapp3.1\SchoolBoard.Data.dll
+D:\SchoolBoard\SchoolBoard.Models\bin\Debug\netcoreapp3.1\SchoolBoard.Data.pdb
+D:\SchoolBoard\SchoolBoard.Models\obj\Debug\netcoreapp3.1\SchoolBoard.Models.csproj.CopyComplete

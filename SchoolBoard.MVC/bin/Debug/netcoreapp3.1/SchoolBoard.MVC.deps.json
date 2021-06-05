@@ -2351,6 +2351,9 @@
         }
       },
       "SchoolBoard.Models/1.0.0": {
+        "dependencies": {
+          "SchoolBoard.Data": "1.0.0"
+        },
         "runtime": {
           "SchoolBoard.Models.dll": {}
         },

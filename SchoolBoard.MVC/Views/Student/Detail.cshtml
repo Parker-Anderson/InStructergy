@@ -1,0 +1,36 @@
+﻿@model SchoolBoard.Models.Student.StudentDetailViewModel
+
+<h1>@Model.Student.Name's SchoolBoard</h1>
+
+@if (Model.Posts.Any())
+{
+    <table>
+        <tbody>
+            @foreach (var post in Model.Posts)
+            {
+                <tr>
+                    <td>
+                        <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id"> @post.Title</a>
+                       
+                    </td>
+
+                    <td>
+                        @post.Author.Name
+                    </td>
+                    <td>
+                        @post.Created
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@if (!Model.Posts.Any())
+{
+    <h2>
+        Looks like there aren't any posts for @Model.Student.Name yet.<br />
+
+        Create one <a asp-controller="Post" asp-action="Create" asp-route-id="@Model.Student.Id">here.</a> 
+    </h2>
+}
+

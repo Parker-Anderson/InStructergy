@@ -8,7 +8,7 @@ namespace SchoolBoard.Models.Student
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
+        public string ImgUrl { get; set; }
         public CourseModels.CourseListItem Course { get; set; }
     }
 }
