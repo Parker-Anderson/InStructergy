@@ -1,4 +1,5 @@
-﻿using SchoolBoard.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SchoolBoard.Data;
 using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
 using System;
@@ -49,7 +50,12 @@ namespace SchoolBoard.Services
 
         public Post GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Posts.Where(p => p.Id == id)
+                .Include(post => post.Instructor)
+                .Include(post => post.Replies)
+                    .ThenInclude(reply=>reply.Instructor)
+                .Include(post => post.Student)
+                .First();
         }
 
         public IEnumerable<Post> GetByStudent(int id)

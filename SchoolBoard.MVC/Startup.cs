@@ -43,6 +43,7 @@ namespace SchoolBoard.MVC
 
             services.AddScoped<ICourse, CourseService>();
             services.AddScoped<IStudent, StudentService>();
+            services.AddScoped<IPost, PostService>();
 
 
 
