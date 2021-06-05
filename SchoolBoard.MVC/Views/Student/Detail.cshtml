@@ -1,6 +1,8 @@
 ﻿@model SchoolBoard.Models.Student.StudentDetailViewModel
 
-<h1>@Model.Student.Name</h1>
+<h2>@Model.Student.Name</h2>
+
+<span id="headingBtn"><a style="color:ghostwhite" asp-controller="Post" asp-action="Create" asp-route-id="@Model.Student.Id" class="btn btn-newPost">Create Post</a></span>
 
 @if (Model.Posts.Any())
 {
@@ -14,10 +16,10 @@
                        
                     </td>
 
-                    <td>
+                    <td style="color: ghostwhite">
                         @post.Author.Name
                     </td>
-                    <td>
+                    <td style="color: ghostwhite">
                         @post.Created
                     </td>
                 </tr>

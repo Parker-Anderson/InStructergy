@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SchoolBoard.Data;
+using SchoolBoard.Data.DataModels;
 using SchoolBoard.Data.SeedData;
 using SchoolBoard.Interfaces;
 using SchoolBoard.Services;

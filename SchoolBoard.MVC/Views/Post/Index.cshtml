@@ -2,12 +2,12 @@
 
 <h1>@Model.Title</h1>
 
-<div>
+<div style="color: ghostwhite">
     Author: @Model.AuthorName
     Created: @Model.Created
 </div>
 
-<div>
+<div style="color: ghostwhite">
     @Model.Body
 </div>
 
@@ -15,12 +15,12 @@
 {
     foreach (var reply in Model.Replies)
     {
-        <div>
+        <div style="color: ghostwhite">
             Author: @reply.AuthorName
             Created: @reply.Created
         </div>
 
-        <div>
+        <div style="color: ghostwhite">
             @reply.Body
         </div>
     }
