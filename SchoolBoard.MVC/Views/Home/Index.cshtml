@@ -3,30 +3,85 @@
 
 @if (!User.Identity.IsAuthenticated)
 {
-<div class=" container body-content">
-    <div class="row frontPageSplash">
-        <div class="col-md-6 frontPageCollab">
-            <div class="frontPageHeading"></div>
-            <p style="font-size: larger"class="homeSubHeading">SchoolBoard is a Hub for Collaboration</p>
+    <div class=" container body-content">
+        <div class="row frontPageSplash">
+            <div class="col-md-6 frontPageCollab">
+                <div class="frontPageHeading"></div>
+                <p style="font-size: larger" class="homeSubHeading">SchoolBoard is a Hub for Collaboration</p>
+            </div>
+            <div class="btn-link" id="homeRegBtn">Educators - Get Started</div>
+            <div class="col-md-6"></div>
         </div>
-        <div class="btn-link" id="homeRegBtn">Educators - Get Started</div>
-        <div class="col-md-6"></div>
     </div>
-</div>
 }
-@if(User.Identity.IsAuthenticated && User.IsInRole("Instructor"))
-            {
-                    <h2 style="color:ghostwhite">Instructor View</h2>
-                    @Html.ActionLink("Your Courses", "MyCourses", "Course")
-                  
-            }
+@if (User.Identity.IsAuthenticated && User.IsInRole("Instructor"))
+{
+    <h2 style="color:ghostwhite"></h2>
+    <div class=" container body-content">
+        <div class="row frontPageSplash">
+            <div class="col-md-6 frontPageCollab">
+                <div class="frontPageHeading"></div>
+                <p style="font-size: larger" class="homeSubHeading">Hi @User.Identity.Name</p>
+                <div>
+                    <form asp-controller="Search" asp-action="Search" method="post">
+                        <input asp-for="SearchQuery" type="text" class="instructorHomeSearch" placeholder="Search SchoolBoard..." />
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+        <div class="row instructorHomeContent">
+            <h5 id="recentActivity">Recent Activity</h5>
+            <table class="table table-borderless" id="latestPostsTable">
+                <tbody>
+                    @foreach (var post in Model.RecentPosts)
+                    {
+                        <tr>
+                            <td>
+                                <div class="studentImg" style="background-image: url(@post.Student.ImgUrl); background-size=100%"></div>
+                                <div class="recentPostTitle">
+                                    <span>@post.Author.Name</span>
+                                    <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">
+                                        @post.Title
+                                    </a>
+                                </div>
+                                <div class="postSubTitle">
+                                    @if (post.RepliesCount == 1)
+                                    {
+                                        <span>@post.RepliesCount Reply</span>
+                                    }
+                                    @if (post.RepliesCount == 0)
+                                    {
+                                        <span>No Replies</span>
+                                    }
+                                    else
+                                    {
+                                        <span>@post.RepliesCount Replies</span>
+                                    }
+                                    <span class="postUser">
+                                        <a asp-controller="Profile" asp-action="Detail" asp-route-id="@post.AuthorId">
+                                            @post.Author.Name
+                                        </a>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
 
-@if(User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
-            {
-                <h2 style="color:ghostwhite">Administration</h2>
-                
-                
-            }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @Html.ActionLink("Your Courses", "MyCourses", "Course")
+
+}
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
+{
+    <h2 style="color:ghostwhite">Administration</h2>
+
+
+}
 
 
 

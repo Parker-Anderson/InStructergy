@@ -41,15 +41,23 @@ namespace SchoolBoard.Services
 
         public IEnumerable<Post> GetAll()
         {
-            return _context.Posts;
+            return _context.Posts
+                .Include(p=>p.Instructor)
+                .Include(p=>p.Replies)
+                    .ThenInclude(r=>r.Instructor)
+                .Include(p=>p.Student);
         }
+        //TODO Implement a filtered GetRecent() to display to Instructors/Student roles with only relevant recent posts.
         public IEnumerable<Post> GetRecent(string id, int n)
         {
-           return
-                GetAll()
-               .Where(p => p.Instructor.Id == id)
-               .OrderByDescending(p => p.Created)
-               .Take(n);
+            return
+                _context.Posts
+                .Include(p => p.Instructor)
+                .Include(p => p.Student)
+                .Include(p => p.Replies)
+                    .ThenInclude(r => r.Instructor)
+                .OrderByDescending(p => p.Created)
+                .Take(n);
         }
         public IEnumerable<Post> GetByAuthor(string id)
         {
@@ -61,18 +69,22 @@ namespace SchoolBoard.Services
             return _context.Posts.Where(p => p.Id == id)
                 .Include(post => post.Instructor)
                 .Include(post => post.Replies)
-                    .ThenInclude(reply=>reply.Instructor)
+                    .ThenInclude(reply => reply.Instructor)
                 .Include(post => post.Student)
                 .First();
         }
 
         public IEnumerable<Post> GetByStudent(int id)
         {
-            return _context.Students
+            return
+                _context.Students
+                .Include(s => s.Posts)
+                    .ThenInclude(p => p.Replies)
+                    .ThenInclude(p => p.Instructor)
                 .Where(s => s.Id == id)
                      .First().Posts;
         }
-    
+
     }
-    
+
 }
