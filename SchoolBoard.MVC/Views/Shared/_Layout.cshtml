@@ -24,51 +24,61 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
-                        @if (SignInManager.IsSignedIn(User))
-                        {
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Settings<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li role="separator" class="dropdown-divider"></li>
-                                    <li class="dropdown-header">Profile</li>
-                                    <li><a asp-controller="Profile" asp-action="Detail">My Profile</a></li>
-                                    @if (User.IsInRole("Administrator"))
-                                    {
-                                        <li role="separator" class="dropdown-divider"></li>
-                                        <li class="dropdown-header">Admin</li>
-                                        <li role="separator" class="dropdown-divider"></li>
-                                            <li class="dropdown-header">Course Administration</li>
-                                            <li><a asp-controller="Course" asp-action="Create">Add Course</a></li>
-                                            <li><a asp-controller="Course" asp-action="Delete">Delete Course</a></li>
-                                            <li><a asp-controller="Course" asp-action="Edit">Update Course</a></li>
-
-                                        
-
-
-
-                                    }
-                                </ul>
-                            </li>
-                        }
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+   
+    <div>
+       
+        
+            @if (User.IsInRole("Administrator"))
+            {
+                <h3 style="color:ghostwhite">Administration</h3>
+                <ul>
+                    <li class="list-unstyled">
+                        
+                        <ul>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - SchoolBoard
+
+
+                            <li style="color:ghostwhite">Course Administration</li>
+                            <li><a asp-controller="Course" asp-action="Create">Add Course</a></li>
+                            <li><a asp-controller="Course" asp-action="Delete">Delete Course</a></li>
+                            <li><a asp-controller="Course" asp-action="Edit">Update Course</a></li>
+                            <li style="color:ghostwhite">Faculty Administration</li>
+                            <li><a asp-controller="Account" asp-action="Create">Add Instructor</a></li>
+                            <li><a asp-controller="Account" asp-action="Delete">Remove Instructor</a></li>
+                            <li><a asp-controller="Account" asp-action="Edit">Update Instructor</a></li>
+                            <li style="color:ghostwhite">Student Administration</li>
+                            <li><a asp-controller="Account" asp-action="Create">Add Student</a></li>
+                            <li><a asp-controller="Account" asp-action="Delete">Remove Student</a></li>
+                            <li><a asp-controller="Account" asp-action="Edit">Update Student</a></li>
+
+
+
+
+
+                        </ul>
+                    </li>
+                </ul>
+            }
         </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
-</body>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - SchoolBoard
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+    </body>
 </html>
