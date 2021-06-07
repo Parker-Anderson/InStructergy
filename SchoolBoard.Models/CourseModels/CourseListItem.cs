@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SchoolBoard.Data.DataModels;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,6 +9,7 @@ namespace SchoolBoard.Models.CourseModels
     {
         public int Id { get; set; }
         public string CourseName { get; set; }
+        public ApplicationUser Instructor { get; set; }
     }
 }
 

@@ -1,11 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using SchoolBoard.Data;
 using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SchoolBoard.Services
@@ -41,9 +41,16 @@ namespace SchoolBoard.Services
 
         public IEnumerable<Post> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Posts;
         }
-
+        public IEnumerable<Post> GetRecent(string id, int n)
+        {
+           return
+                GetAll()
+               .Where(p => p.Instructor.Id == id)
+               .OrderByDescending(p => p.Created)
+               .Take(n);
+        }
         public IEnumerable<Post> GetByAuthor(string id)
         {
             throw new NotImplementedException();
@@ -65,5 +72,7 @@ namespace SchoolBoard.Services
                 .Where(s => s.Id == id)
                      .First().Posts;
         }
+    
     }
+    
 }

@@ -1,5 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model SchoolBoard.Models.HomeModels.HomeIndexModel
+
+
+@if (!User.Identity.IsAuthenticated)
+{
+<div class=" container body-content">
+    <div class="row frontPageSplash">
+        <div class="col-md-6 frontPageCollab">
+            <div class="frontPageHeading"></div>
+            <p style="font-size: larger"class="homeSubHeading">SchoolBoard is a Hub for Collaboration</p>
+        </div>
+        <div class="btn-link" id="homeRegBtn">Educators - Get Started</div>
+        <div class="col-md-6"></div>
+    </div>
+</div>
 }
+@if(User.Identity.IsAuthenticated && User.IsInRole("Instructor"))
+            {
+                    <h2 style="color:ghostwhite">Instructor View</h2>
+                    @Html.ActionLink("Your Courses", "MyCourses", "Course")
+                  
+            }
+
+@if(User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
+            {
+                <h2 style="color:ghostwhite">Administration</h2>
+                
+                
+            }
+
+
 
 

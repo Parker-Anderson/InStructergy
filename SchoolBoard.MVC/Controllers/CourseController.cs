@@ -25,13 +25,31 @@ namespace SchoolBoard.MVC.Controllers
                 .Select(c => new CourseListItem
                 {
                     Id = c.Id,
-                    CourseName = c.CourseName
+                    CourseName = c.CourseName,
+                    Instructor = c.Instructor
                 });
             var model = new CourseIndexModel
             {
                 CourseIndexList = courses
             };
             return View(model);
+        }
+        // Similar method to Index(), but to provide for filtered CourseIndexModel view by Instructor UserId.  
+        public IActionResult MyCourses(string userId)
+        {
+            var myCourses = _courseService.GetByInstructor(userId)
+                .Select(c => new CourseListItem
+                {
+                    Id = c.Id,
+                    Instructor = c.Instructor,
+                    CourseName = c.CourseName,
+                });
+            var model = new CourseIndexModel
+            {
+                CourseIndexList = myCourses
+            };
+            return View(model);
+
         }
 
 

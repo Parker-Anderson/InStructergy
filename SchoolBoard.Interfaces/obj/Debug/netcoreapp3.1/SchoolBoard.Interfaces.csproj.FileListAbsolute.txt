@@ -10,3 +10,6 @@ D:\SchoolBoard\SchoolBoard.Interfaces\bin\Debug\netcoreapp3.1\SchoolBoard.Data.p
 D:\SchoolBoard\SchoolBoard.Interfaces\obj\Debug\netcoreapp3.1\SchoolBoard.Interfaces.csproj.CopyComplete
 D:\SchoolBoard\SchoolBoard.Interfaces\obj\Debug\netcoreapp3.1\SchoolBoard.Interfaces.dll
 D:\SchoolBoard\SchoolBoard.Interfaces\obj\Debug\netcoreapp3.1\SchoolBoard.Interfaces.pdb
+D:\SchoolBoard\SchoolBoard.Interfaces\bin\Debug\netcoreapp3.1\SchoolBoard.Interfaces.runtimeconfig.json
+D:\SchoolBoard\SchoolBoard.Interfaces\bin\Debug\netcoreapp3.1\SchoolBoard.Interfaces.runtimeconfig.dev.json
+D:\SchoolBoard\SchoolBoard.Interfaces\obj\Debug\netcoreapp3.1\SchoolBoard.Interfaces.genruntimeconfig.cache

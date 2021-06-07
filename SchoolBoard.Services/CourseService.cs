@@ -7,15 +7,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 namespace SchoolBoard.Services
 {
     public class CourseService : ICourse
     {
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ApplicationDbContext _context;
-        public CourseService(ApplicationDbContext context)
+        public CourseService(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
+            _httpContextAccessor = httpContextAccessor;
         }
         public Task Create(Course course)
         {
@@ -30,7 +35,8 @@ namespace SchoolBoard.Services
         public IEnumerable<Course> GetAll()
         {
             return _context.Courses
-                .Include(c => c.Students);
+                .Include(c => c.Students)
+                .Include(c=>c.Instructor);
         }
 
         public Course GetById(int id)
@@ -49,10 +55,16 @@ namespace SchoolBoard.Services
             return course;
 
         }
-
-        public IEnumerable<Course> GetByInstructor()
+        // Reason this method was originally giving null ref exception was because of Lazy Loading, must .Include() the Instructor navigation property.
+        public IEnumerable<Course> GetByInstructor(string userId)
         {
-            throw new NotImplementedException();
+            // For .NET Core => User.Identity.GetUserId() does not work.
+            userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            
+            return _context.Courses
+                .Include(c=>c.Students)
+                .Include(c=>c.Instructor)
+                .Where(c => c.Instructor.Id == userId);
         }
 
         public Task UpdateCourse(int courseId, string Name, IEnumerable<Student> students, ApplicationUser instructor)

@@ -8,7 +8,7 @@ namespace SchoolBoard.Interfaces
     {
         
         Course GetById(int id);
-        IEnumerable<Course> GetByInstructor();
+        IEnumerable<Course> GetByInstructor(string userId);
         IEnumerable<Course> GetAll();
 
          

@@ -38,6 +38,7 @@ namespace SchoolBoard.MVC
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddHttpContextAccessor();
                 
             services.AddControllersWithViews();
             services.AddRazorPages();

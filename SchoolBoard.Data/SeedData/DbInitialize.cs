@@ -63,9 +63,28 @@ namespace SchoolBoard.Data.SeedData
                     context.SaveChanges();
                 }
 
-              
-                
-              
+                //Same, except with demo Instructor entry
+                var demoInstructor = context.ApplicationUsers
+                   .Where(a => a.Name == "Instructor").FirstOrDefault();
+                if (demoInstructor == null)
+                {
+                    demoInstructor = new DataModels.ApplicationUser()
+                    {
+                        Name = "Instructor",
+                        Email = "instructor@test.com",
+                        EmailConfirmed = true,
+                        UserName = "instructor@test.com",
+                        Courses = null,
+
+                    };
+                    var userResult = _userManager.CreateAsync(demoInstructor, "Test1!").Result;
+                    _userManager.AddToRoleAsync(demoInstructor, "Instructor");
+                    context.SaveChanges();
+                }
+
+
+
+
                 // demo students
                 var student1 = new Student() { Name = "Student 1", ImgUrl = "#", GPA = 2.5, SatisfactoryPerformance = false };
                 var student2 = new Student() { Name = "Student 2", ImgUrl = "#", GPA = 3.5, SatisfactoryPerformance = true };
@@ -81,7 +100,7 @@ namespace SchoolBoard.Data.SeedData
 
                 // If context has no courses, add demo.
 
-                var computerScience = new Course() { CourseName = "Computer Science", Instructor = adminUser, Students = new List<Student>() { student1, student2 } };
+                var computerScience = new Course() { CourseName = "Computer Science", Instructor = demoInstructor, Students = new List<Student>() { student1, student2 } };
                 if (!context.Courses.Any())
                 {
                    
