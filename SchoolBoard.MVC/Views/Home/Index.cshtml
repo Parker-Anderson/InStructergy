@@ -21,11 +21,11 @@
         <div class="row frontPageSplash">
             <div class="col-md-6 frontPageCollab">
                 <div class="frontPageHeading"></div>
-                <p style="font-size: larger" class="homeSubHeading">Hi @User.Identity.Name</p>
+                <p style="font-size: larger" class="homeSubHeading">Welcome!</p>
                 <div>
                     <form asp-controller="Search" asp-action="Search" method="post">
                         <input asp-for="SearchQuery" type="text" class="instructorHomeSearch" placeholder="Search SchoolBoard..." />
-                        <button type="submit" class="btn btn-searchButton">
+                        <button style="color: ghostwhite" type="submit" class="btn btn-searchButton">
                             <i class="material-icons">search</i>
                         </button>
                     </form>
@@ -65,6 +65,9 @@
                                         <a asp-controller="Profile" asp-action="Detail" asp-route-id="@post.AuthorId">
                                             @post.Author.Name
                                         </a>
+                                    </span>
+                                    <span class="postCreated">
+                                        @post.Created
                                     </span>
                                 </div>
                             </td>

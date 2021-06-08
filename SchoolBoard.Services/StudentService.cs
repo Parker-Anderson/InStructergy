@@ -61,9 +61,15 @@ namespace SchoolBoard.Services
             return student;
         }
 
+        public Task SetProfileImage(int id, Uri uri)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task UpdateStudent(int studentId, string Name, bool satisfactoryPerformance, double GPA)
         {
             throw new NotImplementedException();
         }
+
     }
 }

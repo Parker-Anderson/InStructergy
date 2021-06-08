@@ -21,7 +21,7 @@ namespace SchoolBoard.MVC.Controllers
         public IActionResult Results(string searchQuery)
         {
             var posts = _postService.GetSearchedPosts(searchQuery);
-            // simple in-class method for empty search.
+            //  simple fallback for empty search.
             var noSearch = (!string.IsNullOrEmpty(searchQuery) && !posts.Any());
             var postsList = posts.Select(p => new PostListItem
             {

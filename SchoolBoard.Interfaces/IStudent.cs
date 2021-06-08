@@ -16,6 +16,7 @@ namespace SchoolBoard.Interfaces
         Task Create(Student student);
         Task Delete(int studentId);
         Task UpdateStudent(int studentId, string Name, bool satisfactoryPerformance, double GPA);
+        Task SetProfileImage(int id, Uri uri);
 
     }
 }

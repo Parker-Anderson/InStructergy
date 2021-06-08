@@ -89,6 +89,7 @@ namespace SchoolBoard.Services
 
         public IEnumerable<Post> GetSearchedPosts(string searchQuery)
         {
+           // var lowerCaseSearchQuery = searchQuery.ToLower();
             return GetAll()
                 .Where(p =>
                p.Title.Contains(searchQuery)
