@@ -32,7 +32,7 @@ namespace SchoolBoard.MVC.Controllers
                 IsAdmin = userRoles.Contains("Administrator")
 
             };
-            return View();
+            return View(model);
         }
     }
 }

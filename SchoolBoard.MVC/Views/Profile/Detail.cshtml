@@ -11,12 +11,12 @@
         </div>
         @if (User.IsInRole("Administrator")) 
         {
-            // <button>Admin Task</button> example*
+            <button>Admin Task</button> //example
         }
     </div>
     <div class="row userProfile">
         <div class="col-md-4">
-            <div id="userImg" style="background-image: url(@Model.ImgUrl)"></div>
+            <div id="userImg" style="background-image: url(/wwwroot/Images/teacherprofileimg.png)"></div>
             @if(User.Identity.Name == Model.UserName)
             {
                 <form method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="ProfileImgUpload">

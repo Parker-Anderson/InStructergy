@@ -228,5 +228,5 @@ D:\SchoolBoard\SchoolBoard.MVC\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcore
 D:\SchoolBoard\SchoolBoard.MVC\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\SchoolBoard\SchoolBoard.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Course\MyCourses.cshtml.g.cs
 D:\SchoolBoard\SchoolBoard.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Search\Results.cshtml.g.cs
-D:\SchoolBoard\SchoolBoard.MVC\obj\Debug\netcoreapp3.1\Razor\Views\UserProfile\Detail.cshtml.g.cs
-D:\SchoolBoard\SchoolBoard.MVC\obj\Debug\netcoreapp3.1\Razor\Views\UserProfile\Index.cshtml.g.cs
+D:\SchoolBoard\SchoolBoard.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Detail.cshtml.g.cs
+D:\SchoolBoard\SchoolBoard.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Index.cshtml.g.cs

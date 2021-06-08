@@ -52,6 +52,8 @@ namespace SchoolBoard.MVC
             services.AddScoped<IStudent, StudentService>();
             services.AddScoped<IPost, PostService>();
             //services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationClaimsPrincipalFactory>();
+            services.AddScoped<IUpload, UploadService>();
+            services.AddScoped<IApplicationUser, ApplicationUserService>();
 
 
 
