@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SchoolBoard.Data.DataModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using SchoolBoard.Interfaces;
+using SchoolBoard.Models.UserModels;
 
 namespace SchoolBoard.MVC.Controllers
 {
@@ -22,6 +20,18 @@ namespace SchoolBoard.MVC.Controllers
         }
         public IActionResult Detail(string id)
         {
+            var user = _userService.GetById(id);
+            var userRoles = _userManager.GetRolesAsync(user).Result;
+            var model = new UserProfileModel()
+            {
+                Id = user.Id,
+                UserName = user.UserName,
+                Email = user.Email,
+                Courses = user.Courses,
+                ImgUrl = user.ImageUrl,
+                IsAdmin = userRoles.Contains("Administrator")
+
+            };
             return View();
         }
     }
