@@ -1,0 +1,47 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using SchoolBoard.Data.DataModels
+@model SchoolBoard.Models.UserModels.UserProfileModel 
+
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="container body-content">
+    <div class="row sectionHeader">
+        <div class="sectionHeading">
+            User Profile
+        </div>
+        @if (User.IsInRole("Administrator")) 
+        {
+            // <button>Admin Task</button> example*
+        }
+    </div>
+    <div class="row userProfile">
+        <div class="col-md-4">
+            <div id="userImg" style="background-image: url(@Model.ImgUrl)"></div>
+            @if(User.Identity.Name == Model.UserName)
+            {
+                <form method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="ProfileImgUpload">
+                    <div id="upload">
+                        <label class="btn btn-default btn-file">
+                            Select <input type="file" name="file" style="display: none"/>
+                        </label>
+                    </div>
+                    <button type="submit" id="btn-prfimg" class="btn btn-default">Upload</button>
+                </form>
+            }
+        </div>
+    </div>
+    <div class="col-md-8">
+        <span id="userName">@Model.UserName</span>
+        <span id="userEmailLabel">Email: @Model.Email</span>
+        <span id="userCourses">
+        Courses:
+            @if (User.IsInRole("Instructor") && Model.Courses.Any())
+            {
+            @foreach(var course in Model.Courses)
+                {
+                    <span>@course.CourseName</span>
+                }
+            }
+        </span>
+    </div>
+</div>

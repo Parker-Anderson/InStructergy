@@ -12,5 +12,6 @@ namespace SchoolBoard.Interfaces
         IEnumerable<ApplicationUser> GetAllUsers();
 
         Task SetProfileImage(string id, Uri uri);
+        // TODO add Tasks for administrative functions here.
     }
 }
