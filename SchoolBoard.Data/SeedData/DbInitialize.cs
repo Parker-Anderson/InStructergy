@@ -20,7 +20,7 @@ namespace SchoolBoard.Data.SeedData
                 context.Database.EnsureCreated();
 
                 var _userManager = 
-                    serviceScope.ServiceProvider.GetService<UserManager<IdentityUser>>();
+                    serviceScope.ServiceProvider.GetService<UserManager<ApplicationUser>>();
                 var _roleManager = 
                     serviceScope.ServiceProvider.GetService<RoleManager<IdentityRole>>();
                
