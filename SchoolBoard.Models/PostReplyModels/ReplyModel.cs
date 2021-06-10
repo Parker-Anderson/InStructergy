@@ -12,5 +12,10 @@ namespace SchoolBoard.Models.PostReplyModels
         public string Body { get; set; }
         public DateTime Created { get; set; }
         public int PostId { get; set; }
+        public string PostTitle { get; set; }
+        public string PostBody { get; set; }
+
+        public string StudentName { get; set; }
+        public string StudentImgUrl { get; set; }
     }
 }

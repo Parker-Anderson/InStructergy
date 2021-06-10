@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
 using SchoolBoard.Models.UserModels;
+using System.Threading.Tasks;
 
 namespace SchoolBoard.MVC.Controllers
 {
@@ -21,6 +23,7 @@ namespace SchoolBoard.MVC.Controllers
         public IActionResult Detail(string id)
         {
             var user = _userService.GetById(id);
+                
             var userRoles = _userManager.GetRolesAsync(user).Result;
             var model = new UserProfileModel()
             {
@@ -34,5 +37,19 @@ namespace SchoolBoard.MVC.Controllers
             };
             return View(model);
         }
+        //
+        //[HttpPost]
+        //public async Task<IActionResult> UploadFile(IFormFile file)
+        //{
+          //  var userId = _userManager.GetUserId(User);
+            //Connect to Azure Object storage
+            //Get BLOB Container
+            //Parse the Content Disposition response header
+            //Get filename
+            //Get reference to a Block BLOB
+            //on that Block BLOB, file uploaded to cloud
+
+            //Attach the file to post, profileimg, reply or other table.
+        //}
     }
 }
