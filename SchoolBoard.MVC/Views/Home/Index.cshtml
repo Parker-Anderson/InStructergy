@@ -1,8 +1,149 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using SchoolBoard.Data.DataModels
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@model SchoolBoard.Models.HomeModels.HomeIndexModel
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="container-fluid">
+
+@if (!User.Identity.IsAuthenticated)
+{
+    <div style="justify-content:flex-start" class="container body-content">
+        <div class="row frontPageSplash">
+            <div class="col-md-6 frontPageCollab">
+                <div class="frontPageHeading"></div>
+                <p style="font-size: larger" class="homeSubHeading">SchoolBoard is a Hub for Collaboration</p>
+            </div>
+            <div class="btn-link" id="homeRegBtn">Educators - Get Started</div>
+            <div class="col-md-6"></div>
+
+        </div>
+    </div>
+}
+@if (User.Identity.IsAuthenticated && User.IsInRole("Instructor"))
+{
+    
+    <div style="justify-content:flex-start" class="container body-content">
+        <div class="row frontPageSplash">
+            <div class="col-md-6 frontPageCollab">
+                <div class="frontPageHeading"></div>
+                <p style="font-size: larger" class="homeSubHeading"></p>
+                <div>
+                    <form asp-controller="Search" asp-action="Search" method="post">
+                        <input asp-for="SearchQuery" type="text" class="instructorHomeSearch" placeholder="Search SchoolBoard..." />
+                        <button style="color: ghostwhite" type="submit" class="btn btn-searchButton">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+        <div style="justify-content:flex-start">
+            <h5 style="justify-content:flex-start" id="recentActivity">Recent Activity</h5>
+            <table style="justify-content:flex-start" class="table table-borderless" id="latestPostsTable">
+                <tbody>
+                    @foreach (var post in Model.RecentPosts)
+                    {
+                        <tr>
+                            <td>
+                                <div class="studentImg" style="background-image: url(@post.Student.ImgUrl); background-size=100%"></div>
+                                <div class="recentPostTitle">
+
+                                    <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">
+                                        @post.Title
+                                    </a>
+                                </div>
+                                <div class="postSubTitle">
+                                    @if (post.RepliesCount == 1)
+                                    {
+                                        <span>@post.RepliesCount Reply</span>
+                                    }
+                                    @if (post.RepliesCount == 0)
+                                    {
+                                        <span>No Replies</span>
+                                    }
+                                    else
+                                    {
+                                        <span>@post.RepliesCount Replies</span>
+                                    }
+                                    <span class="postUser">
+                                        <a asp-controller="Profile" asp-action="Detail" asp-route-id="@post.AuthorId">
+                                            @post.Author.Name
+                                        </a>
+                                    </span>
+                                    <span class="postCreated">
+                                        @post.Created
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div style="justify-content:flex-start">
+        @if (User.Identity.IsAuthenticated)
+        {
+            var nameId = this.User.FindFirst(ClaimTypes.NameIdentifier);
+            string id = nameId.ToString().Substring(70);
+            <a style="justify-content:flex-start; color:ghostwhite" asp-controller="Profile" asp-action="Detail" asp-route-id=@id>
+                My Profile
+            </a>
+        }
+        @Html.ActionLink("Your Courses", "MyCourses", "Course")
+        </div>
+    </div>
+  
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@if (User.IsInRole("Administrator"))
+{
+<div class="container-fluid">
+    <h3 style="color:ghostwhite">Administration</h3>
+    @if (User.Identity.IsAuthenticated)
+    {
+        var nameId = this.User.FindFirst(ClaimTypes.NameIdentifier);
+        string id = nameId.ToString().Substring(70);
+        <a style="color:ghostwhite" asp-controller="Profile" asp-action="Detail" asp-route-id=@id>
+            My Profile
+        </a>
+    }
+    <ul>
+        <li class="dropdown-menu">
+
+            <ul>
+
+
+
+                <li style="color:ghostwhite">Course Administration</li>
+                <li><a asp-controller="Course" asp-action="Create">Add Course</a></li>
+                <li><a asp-controller="Course" asp-action="Delete">Delete Course</a></li>
+                <li><a asp-controller="Course" asp-action="Edit">Update Course</a></li>
+                <li style="color:ghostwhite">Faculty Administration</li>
+                <li><a asp-controller="Account" asp-action="Create">Add Instructor</a></li>
+                <li><a asp-controller="Account" asp-action="Delete">Remove Instructor</a></li>
+                <li><a asp-controller="Account" asp-action="Edit">Update Instructor</a></li>
+                <li style="color:ghostwhite">Student Administration</li>
+                <li><a asp-controller="Account" asp-action="Create">Add Student</a></li>
+                <li><a asp-controller="Account" asp-action="Delete">Remove Student</a></li>
+                <li><a asp-controller="Account" asp-action="Edit">Update Student</a></li>
+
+
+
+
+
+            </ul>
+        </li>
+    </ul>
 </div>
+
+}
+</div>
+
+
+
+
+

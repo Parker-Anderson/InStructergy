@@ -4,6 +4,7 @@ using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,9 +13,11 @@ namespace SchoolBoard.Services
     public class StudentService : IStudent
     {
         private readonly ApplicationDbContext _context;
-        public StudentService(ApplicationDbContext context)
+        private readonly ICourse _courseService;
+        public StudentService(ApplicationDbContext context, ICourse courseService)
         {
             _context = context;
+            _courseService = courseService;
         }
 
         public Task Create(Student student)
@@ -38,12 +41,27 @@ namespace SchoolBoard.Services
                 .Include(s => s.Posts);
         }
 
-        public IEnumerable<Student> GetByCourse()
+        public IEnumerable<Student> GetByCourse(int id)
         {
-            throw new NotImplementedException();
+            var course = _courseService.GetById(id);
+            var students = course.Students;
+            return students;
         }
 
         public Student GetById(int id)
+        {
+            var student = _context.Students
+                .Where(s => s.Id == id)
+                    .Include(s=>s.Posts)
+                        .ThenInclude(p=>p.Replies)
+                            .ThenInclude(r=>r.Instructor)
+                    .Include(s=>s.Posts)
+                        .ThenInclude(p=>p.Instructor)
+                .FirstOrDefault();
+            return student;
+        }
+
+        public Task SetProfileImage(int id, Uri uri)
         {
             throw new NotImplementedException();
         }
@@ -52,5 +70,6 @@ namespace SchoolBoard.Services
         {
             throw new NotImplementedException();
         }
+
     }
 }

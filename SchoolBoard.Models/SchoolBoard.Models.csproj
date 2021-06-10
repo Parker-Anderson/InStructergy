@@ -5,10 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="UserModels\" />
-    <Folder Include="PostReplyModels\" />
-    <Folder Include="PostModels\" />
-    <Folder Include="StudentModels\" />
+    <Compile Remove="StudentModels\**" />
+    <EmbeddedResource Remove="StudentModels\**" />
+    <None Remove="StudentModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SchoolBoard.Data\SchoolBoard.Data.csproj" />
   </ItemGroup>
 
 </Project>

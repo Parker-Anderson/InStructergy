@@ -1,7 +1,30 @@
-﻿
+﻿@model SchoolBoard.Models.CourseModels.CourseIndexModel
 @{
     ViewData["Title"] = "Index";
 }
+@using System.Security.Claims
 
-<h1>Index</h1>
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor _httpContextAccessor
+@{
+    var userId = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+    
+}
+
+<h1>Course Index</h1>
+
+<table class="table table-hover" id="courseIndexTable">
+    
+    @foreach (var course in Model.CourseIndexList)
+    {
+        @if (course.Instructor.Id == userId)
+        {
+        <tr>
+            <td>
+                <a asp-controller="Course" asp-action="Detail" asp-route-id="@course.Id">@course.CourseName</a>
+            </td>
+        </tr>
+        }
+
+    }
+</table>
 

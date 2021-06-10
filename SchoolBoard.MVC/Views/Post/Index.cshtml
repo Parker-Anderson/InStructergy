@@ -1,0 +1,27 @@
+﻿@model SchoolBoard.Models.PostModels.PostIndexModel
+
+<h1>@Model.Title</h1>
+
+<div style="color: ghostwhite">
+    Author: @Model.AuthorName
+    Created: @Model.Created
+</div>
+
+<div style="color: ghostwhite">
+    @Model.Body
+</div>
+
+@if (Model.Replies.Any())
+{
+    foreach (var reply in Model.Replies)
+    {
+        <div style="color: ghostwhite">
+            Author: @reply.AuthorName
+            Created: @reply.Created
+        </div>
+
+        <div style="color: ghostwhite">
+            @reply.Body
+        </div>
+    }
+}

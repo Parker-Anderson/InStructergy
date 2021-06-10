@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using SchoolBoard.Data.DataModels
+@model SchoolBoard.Models.UserModels.UserProfileModel
+
+@inject UserManager<ApplicationUser> UserManager
+
+<div class="container body-content">
+    <div class="row sectionHeader">
+        <div class="sectionHeading">
+
+        </div>
+        @if (User.IsInRole("Administrator"))
+        {
+
+            <span style="color: blueviolet">@User.Identity.Name's Profile Coming Soon</span>
+        }
+    </div>
+   
+<div class="col-md-8">
+
+
+    @if (User.IsInRole("Instructor"))
+
+
+    {
+        <span style="color: blueviolet">@User.Identity.Name's Profile Coming Soon</span>
+        <span id="userEmailLabel"></span>
+        <span id="userCourses">
+            <span></span>
+
+
+        </span>
+    }
+
+
+</div>
