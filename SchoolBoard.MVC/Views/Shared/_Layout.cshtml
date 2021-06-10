@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject UserManager<IdentityUser> UserManager
-@inject SignInManager<IdentityUser> SignInManager
+@using SchoolBoard.Data.DataModels
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,9 @@
     <title>@ViewData["Title"] - SchoolBoard</title>
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -29,56 +32,26 @@
             </div>
         </nav>
     </header>
-   
+
     <div>
+
+
        
-        
-            @if (User.IsInRole("Administrator"))
-            {
-                <h3 style="color:ghostwhite">Administration</h3>
-                <ul>
-                    <li class="list-unstyled">
-                        
-                        <ul>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
 
-
-
-                            <li style="color:ghostwhite">Course Administration</li>
-                            <li><a asp-controller="Course" asp-action="Create">Add Course</a></li>
-                            <li><a asp-controller="Course" asp-action="Delete">Delete Course</a></li>
-                            <li><a asp-controller="Course" asp-action="Edit">Update Course</a></li>
-                            <li style="color:ghostwhite">Faculty Administration</li>
-                            <li><a asp-controller="Account" asp-action="Create">Add Instructor</a></li>
-                            <li><a asp-controller="Account" asp-action="Delete">Remove Instructor</a></li>
-                            <li><a asp-controller="Account" asp-action="Edit">Update Instructor</a></li>
-                            <li style="color:ghostwhite">Student Administration</li>
-                            <li><a asp-controller="Account" asp-action="Create">Add Student</a></li>
-                            <li><a asp-controller="Account" asp-action="Delete">Remove Student</a></li>
-                            <li><a asp-controller="Account" asp-action="Edit">Update Student</a></li>
-
-
-
-
-
-                        </ul>
-                    </li>
-                </ul>
-            }
-        </div>
+    <footer class="border-top footer text-muted">
         <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
+            &copy; 2021 - SchoolBoard
         </div>
-
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2021 - SchoolBoard
-            </div>
-        </footer>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        @RenderSection("Scripts", required: false)
-    </body>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
 </html>

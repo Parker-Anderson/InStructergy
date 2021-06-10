@@ -1,0 +1,38 @@
+﻿@model SchoolBoard.Models.PostReplyModels.ReplyModel
+
+<div class="container-fluid">
+    <div class="row">
+        <div style="color:ghostwhite">
+            Reply | @Model.PostTitle
+        </div>
+        <span id="headingBtn">
+            <a asp-controller="Post" asp-action="Index" asp-route-id="@Model.PostId" class="btn btn-back">
+                Back to Post
+            </a>
+        </span>
+    </div>
+    <div class="row">
+        <div id="Reply">
+            <h3 style="color:ghostwhite">
+                @Model.PostTitle
+            </h3>
+            <p style="color:ghostwhite">
+                @Model.PostBody
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div style="color:ghostwhite" id="createReply">
+            <div class="authorBlock">
+                Posting as @Model.AuthorName
+            </div>
+            <form asp-action="AddReply" method="post" id="addPostForm">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Body">Submit a Reply</label>
+                    <textarea asp-for="Body" rows="20" class="form-control" placeholder="Reply..."></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

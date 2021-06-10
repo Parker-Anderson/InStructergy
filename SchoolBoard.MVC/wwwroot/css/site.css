@@ -1,5 +1,12 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+body{
+    color: ghostwhite;
+}
+
+a{
+    color: ghostwhite;
+}
 
 .navbar {
     box-shadow: 0 5px 4px -6px #000;
@@ -33,13 +40,14 @@ div{
 
 
 .btn-primary {
-  color: #fff;
+    text-align:left;
+  color: ghostwhite;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
+  color: ghostwhite;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
@@ -50,17 +58,13 @@ html {
   font-size: 14px;
 }
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+    }
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
+
 
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
@@ -74,13 +78,16 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    min-height: 100%;
 }
-h1{
+h1 {
+    font-family: 'Nunito', sans-serif;
     color: ghostwhite;
 }
-h2{
+h2 {
+    font-family: 'Nunito', sans-serif;
     color: ghostwhite;
 }
 body {
@@ -91,9 +98,8 @@ body {
     background-image: url(../Images/ChalkBoard.jpg);
     background-repeat: no-repeat;
     color: ghostwhite;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: initial;
-    font-style: italic;
 }
 .footer {
   position: absolute;

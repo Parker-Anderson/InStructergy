@@ -10,6 +10,7 @@ namespace SchoolBoard.Interfaces
     {
         Post GetById(int id);
         IEnumerable<Post> GetAll();
+        IEnumerable<Post> GetSearchedPosts(string searchQuery);
         IEnumerable<Post> GetRecent(string id, int n);
         IEnumerable<Post> GetByAuthor(string id);
         IEnumerable<Post> GetByStudent(int id);

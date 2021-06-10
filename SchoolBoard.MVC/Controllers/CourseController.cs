@@ -69,5 +69,7 @@ namespace SchoolBoard.MVC.Controllers
             };
             return View(model);
         }
+
+      
     }
 }

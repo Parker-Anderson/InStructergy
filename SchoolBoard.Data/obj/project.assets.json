@@ -6247,6 +6247,7 @@
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.14",
       "Microsoft.EntityFrameworkCore >= 3.1.15",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.14",
+      "Microsoft.Extensions.Identity.Core >= 5.0.6",
       "Microsoft.Extensions.Identity.Stores >= 5.0.6"
     ]
   },
@@ -6316,6 +6317,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[3.1.14, )"
+          },
+          "Microsoft.Extensions.Identity.Core": {
+            "target": "Package",
+            "version": "[5.0.6, )"
           },
           "Microsoft.Extensions.Identity.Stores": {
             "target": "Package",

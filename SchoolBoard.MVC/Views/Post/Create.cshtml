@@ -10,8 +10,29 @@
     <div class="form-group">
         <label asp-for="Body"></label>
         <textarea asp-for="Body" class="form-control"></textarea>
+
     </div>
-    <button style="color:ghostwhite" type="submit" id="submitPostBtn" class="btn btn-submitPost">Submit</button>
-    <input asp-for="StudentId" type="hidden" />
+
+
 </form>
+<div class="row userProfile">
+    <div class="col-md-4">
+        <div id="userImg"></div>
+        @if (User.Identity.Name == Model.AuthorName)
+        {
+            <form method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="Upload">
+                <div style="color:ghostwhite" id="upload">
+                    <label style="color: ghostwhite" class="btn-default btn-file">
+                        Select <input type="file" name="file" style="display: none" />
+                    </label>
+                    <button style="color:ghostwhite" type="submit" id="btn-prfimg" class="btn btn-default">Upload</button>
+                </div>
+
+            </form>
+        }
+    </div>
+
+</div>
+<button style="color:ghostwhite" type="submit" id="submitPostBtn" class="btn btn-submitPost">Submit</button>
+<input asp-for="StudentId" type="hidden" />
 

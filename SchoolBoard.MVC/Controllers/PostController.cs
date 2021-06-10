@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SchoolBoard.Data;
 using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
 using SchoolBoard.Models.PostModels;
@@ -15,9 +16,9 @@ namespace SchoolBoard.MVC.Controllers
     {
         private readonly IPost _postService;
         private readonly IStudent _studentService;
-        private static UserManager<IdentityUser> _userManager;
+        private static UserManager<ApplicationUser> _userManager;
         
-        public PostController(IPost postService, IStudent studentService, UserManager<IdentityUser> userManager)
+        public PostController(IPost postService, IStudent studentService, UserManager<ApplicationUser> userManager)
         {
             _postService = postService;
             _studentService = studentService;
@@ -43,6 +44,7 @@ namespace SchoolBoard.MVC.Controllers
         //id parameter in Create(int id) will be the StudentId, this method directs to the create viewmodel to accept input.
         public IActionResult Create(int id)
         {
+           
             var student = _studentService.GetById(id);
             var model = new CreatePostModel
             {
@@ -66,7 +68,7 @@ namespace SchoolBoard.MVC.Controllers
 
 
         // This private method 'reverses' the flow of data - that is, it passes the accepted input data from the ViewModel back to the Data Model to be INSERTed into the Db.
-        private Post BuildPostEntity(CreatePostModel model, IdentityUser user)
+        private Post BuildPostEntity(CreatePostModel model, ApplicationUser user)
         {
             var student = _studentService.GetById(model.StudentId);
             
@@ -75,7 +77,7 @@ namespace SchoolBoard.MVC.Controllers
                 Title = model.Title,
                 Body = model.Body,
                 Created = DateTime.Now,
-                Instructor = (ApplicationUser)user,
+                Instructor = user,
                 Student = student
             };
         }

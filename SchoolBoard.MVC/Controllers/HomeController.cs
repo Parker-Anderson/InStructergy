@@ -16,9 +16,9 @@ namespace SchoolBoard.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IPost _postService;
-        public HomeController(IPost postService, UserManager<IdentityUser> userManager, ILogger<HomeController> logger)
+        public HomeController(IPost postService, UserManager<ApplicationUser> userManager, ILogger<HomeController> logger)
         {
             _userManager = userManager;
             _postService = postService;
@@ -79,6 +79,12 @@ namespace SchoolBoard.MVC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [HttpPost]
+        public IActionResult Search(int id, string searchQuery)
+        {
+            return RedirectToAction("Student", new { id, searchQuery });
         }
     }
 }

@@ -35,10 +35,15 @@ namespace SchoolBoard.MVC
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddRoles<IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultUI()
+                .AddDefaultTokenProviders();
+                
+           
             services.AddHttpContextAccessor();
+            
                 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -46,6 +51,10 @@ namespace SchoolBoard.MVC
             services.AddScoped<ICourse, CourseService>();
             services.AddScoped<IStudent, StudentService>();
             services.AddScoped<IPost, PostService>();
+            //services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationClaimsPrincipalFactory>();
+            services.AddScoped<IUpload, UploadService>();
+            services.AddScoped<IApplicationUser, ApplicationUserService>();
+
 
 
 

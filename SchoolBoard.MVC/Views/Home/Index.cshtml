@@ -1,9 +1,14 @@
-﻿@model SchoolBoard.Models.HomeModels.HomeIndexModel
+﻿@using SchoolBoard.Data.DataModels
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@model SchoolBoard.Models.HomeModels.HomeIndexModel
+@inject UserManager<ApplicationUser> UserManager
 
+<div class="container-fluid">
 
 @if (!User.Identity.IsAuthenticated)
 {
-    <div class=" container body-content">
+    <div style="justify-content:flex-start" class="container body-content">
         <div class="row frontPageSplash">
             <div class="col-md-6 frontPageCollab">
                 <div class="frontPageHeading"></div>
@@ -11,28 +16,32 @@
             </div>
             <div class="btn-link" id="homeRegBtn">Educators - Get Started</div>
             <div class="col-md-6"></div>
+
         </div>
     </div>
 }
 @if (User.Identity.IsAuthenticated && User.IsInRole("Instructor"))
 {
-    <h2 style="color:ghostwhite"></h2>
-    <div class=" container body-content">
+    
+    <div style="justify-content:flex-start" class="container body-content">
         <div class="row frontPageSplash">
             <div class="col-md-6 frontPageCollab">
                 <div class="frontPageHeading"></div>
-                <p style="font-size: larger" class="homeSubHeading">Hi @User.Identity.Name</p>
+                <p style="font-size: larger" class="homeSubHeading"></p>
                 <div>
                     <form asp-controller="Search" asp-action="Search" method="post">
                         <input asp-for="SearchQuery" type="text" class="instructorHomeSearch" placeholder="Search SchoolBoard..." />
+                        <button style="color: ghostwhite" type="submit" class="btn btn-searchButton">
+                            <i class="material-icons">search</i>
+                        </button>
                     </form>
                 </div>
             </div>
             <div class="col-md-6"></div>
         </div>
-        <div class="row instructorHomeContent">
-            <h5 id="recentActivity">Recent Activity</h5>
-            <table class="table table-borderless" id="latestPostsTable">
+        <div style="justify-content:flex-start">
+            <h5 style="justify-content:flex-start" id="recentActivity">Recent Activity</h5>
+            <table style="justify-content:flex-start" class="table table-borderless" id="latestPostsTable">
                 <tbody>
                     @foreach (var post in Model.RecentPosts)
                     {
@@ -40,7 +49,7 @@
                             <td>
                                 <div class="studentImg" style="background-image: url(@post.Student.ImgUrl); background-size=100%"></div>
                                 <div class="recentPostTitle">
-                                    <span>@post.Author.Name</span>
+
                                     <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">
                                         @post.Title
                                     </a>
@@ -63,6 +72,9 @@
                                             @post.Author.Name
                                         </a>
                                     </span>
+                                    <span class="postCreated">
+                                        @post.Created
+                                    </span>
                                 </div>
                             </td>
                         </tr>
@@ -71,17 +83,66 @@
                 </tbody>
             </table>
         </div>
+        <div style="justify-content:flex-start">
+        @if (User.Identity.IsAuthenticated)
+        {
+            var nameId = this.User.FindFirst(ClaimTypes.NameIdentifier);
+            string id = nameId.ToString().Substring(70);
+            <a style="justify-content:flex-start; color:ghostwhite" asp-controller="Profile" asp-action="Detail" asp-route-id=@id>
+                My Profile
+            </a>
+        }
+        @Html.ActionLink("Your Courses", "MyCourses", "Course")
+        </div>
     </div>
-    @Html.ActionLink("Your Courses", "MyCourses", "Course")
+  
 
 }
 
-@if (User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
+@if (User.IsInRole("Administrator"))
 {
-    
+<div class="container-fluid">
+    <h3 style="color:ghostwhite">Administration</h3>
+    @if (User.Identity.IsAuthenticated)
+    {
+        var nameId = this.User.FindFirst(ClaimTypes.NameIdentifier);
+        string id = nameId.ToString().Substring(70);
+        <a style="color:ghostwhite" asp-controller="Profile" asp-action="Detail" asp-route-id=@id>
+            My Profile
+        </a>
+    }
+    <ul>
+        <li class="dropdown-menu">
 
+            <ul>
+
+
+
+                <li style="color:ghostwhite">Course Administration</li>
+                <li><a asp-controller="Course" asp-action="Create">Add Course</a></li>
+                <li><a asp-controller="Course" asp-action="Delete">Delete Course</a></li>
+                <li><a asp-controller="Course" asp-action="Edit">Update Course</a></li>
+                <li style="color:ghostwhite">Faculty Administration</li>
+                <li><a asp-controller="Account" asp-action="Create">Add Instructor</a></li>
+                <li><a asp-controller="Account" asp-action="Delete">Remove Instructor</a></li>
+                <li><a asp-controller="Account" asp-action="Edit">Update Instructor</a></li>
+                <li style="color:ghostwhite">Student Administration</li>
+                <li><a asp-controller="Account" asp-action="Create">Add Student</a></li>
+                <li><a asp-controller="Account" asp-action="Delete">Remove Student</a></li>
+                <li><a asp-controller="Account" asp-action="Edit">Update Student</a></li>
+
+
+
+
+
+            </ul>
+        </li>
+    </ul>
+</div>
 
 }
+</div>
+
 
 
 

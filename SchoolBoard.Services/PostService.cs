@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using SchoolBoard.Data;
 using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
@@ -20,13 +21,15 @@ namespace SchoolBoard.Services
 
         public async Task Add(Post post)
         {
+
             _context.Add(post);
             await _context.SaveChangesAsync();
         }
 
-        public Task AddReply(PostReply reply)
+        public async Task AddReply(PostReply reply)
         {
-            throw new NotImplementedException();
+            _context.Add(reply);
+            await _context.SaveChangesAsync();
         }
 
         public Task Delete(int id)
@@ -42,10 +45,10 @@ namespace SchoolBoard.Services
         public IEnumerable<Post> GetAll()
         {
             return _context.Posts
-                .Include(p=>p.Instructor)
-                .Include(p=>p.Replies)
-                    .ThenInclude(r=>r.Instructor)
-                .Include(p=>p.Student);
+                .Include(p => p.Instructor)
+                .Include(p => p.Replies)
+                    .ThenInclude(r => r.Instructor)
+                .Include(p => p.Student);
         }
         //TODO Implement a filtered GetRecent() to display to Instructors/Student roles with only relevant recent posts.
         public IEnumerable<Post> GetRecent(string id, int n)
@@ -85,6 +88,16 @@ namespace SchoolBoard.Services
                      .First().Posts;
         }
 
+        public IEnumerable<Post> GetSearchedPosts(string searchQuery)
+        {
+           // var lowerCaseSearchQuery = searchQuery.ToLower();
+            return GetAll()
+                .Where(p =>
+               p.Title.Contains(searchQuery)
+            || p.Body.Contains(searchQuery)
+            || p.Student.Name.Contains(searchQuery)
+            || p.Instructor.Name.Contains(searchQuery));
+        }
     }
 
 }
