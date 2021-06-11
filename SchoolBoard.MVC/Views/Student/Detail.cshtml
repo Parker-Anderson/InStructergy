@@ -1,0 +1,41 @@
+﻿@model SchoolBoard.Models.Student.StudentDetailViewModel
+
+<div class="container-fluid">
+    <h2 style="justify-content: flex-start">@Model.Student.Name</h2>
+
+
+
+    @if (Model.Posts.Any())
+    {
+        <table style="justify-content:flex-start">
+            <tbody>
+                @foreach (var post in Model.Posts)
+                {
+                    <tr>
+                        <td>
+                            <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id"> @post.Title</a>
+
+                        </td>
+
+                        <td style="color: ghostwhite">
+                            @post.Author.Name
+                        </td>
+                        <td style="color: ghostwhite">
+                            @post.Created
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    @if (!Model.Posts.Any())
+    {
+        <h3 style="justify-content:flex-start">
+            Looks like there aren't any posts for @Model.Student.Name yet.<br />
+
+
+        </h3>
+    }
+    <span style="justify-content:flex-end" id="headingBtn"><a style="color:ghostwhite; justify-content:flex-end; align-content:stretch" asp-controller="Post" asp-action="Create" asp-route-id="@Model.Student.Id" class="btn btn-newPost">Create Post</a></span>
+
+</div>
