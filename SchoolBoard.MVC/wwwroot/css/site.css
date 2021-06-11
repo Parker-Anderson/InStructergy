@@ -5,7 +5,7 @@ body{
 }
 
 a{
-    color: ghostwhite;
+    color: darkkhaki;
 }
 
 .navbar {
@@ -37,6 +37,9 @@ a.navbar-brand.navLogo {
 div{
     color: ghostwhite;
 }
+div a .recentPostTitle{
+    color:darkkhaki;
+}
 
 
 .btn-primary {
@@ -64,7 +67,9 @@ html {
     }
 }
 
-
+.yellowa{
+    color:darkkhaki;
+}
 
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
