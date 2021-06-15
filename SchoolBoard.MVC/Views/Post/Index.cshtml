@@ -3,14 +3,20 @@
 <h1>@Model.Title</h1>
 
 <div style="color: ghostwhite">
-    Author: @Model.AuthorName
-    Created: @Model.Created
+    <p>Author: @Model.AuthorName</p>
+    <p>Created: @Model.Created</p>
 </div>
 
 <div style="color: ghostwhite">
     @Model.Body
 </div>
-
+<div class="row" id="replyDivider"></div>
+@if (Context.User.Identity.IsAuthenticated)
+{
+    <div class="row" id="replyRow">
+        <span><a style="color: darkkhaki" asp-controller="Reply" asp-action="Create" asp-route-id="@Model.Id" class="btn btn-newReply">Post Reply</a></span>
+    </div>
+}
 @if (Model.Replies.Any())
 {
     foreach (var reply in Model.Replies)

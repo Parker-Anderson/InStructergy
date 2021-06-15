@@ -17,5 +17,6 @@ namespace SchoolBoard.Models.PostReplyModels
 
         public string StudentName { get; set; }
         public string StudentImgUrl { get; set; }
+        public int StudentId { get; set; }
     }
 }

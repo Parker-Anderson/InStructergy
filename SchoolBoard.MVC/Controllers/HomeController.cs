@@ -46,6 +46,7 @@ namespace SchoolBoard.MVC.Controllers
                 Author = p.Instructor,
                 AuthorId = p.Instructor.Id,
                 Body = p.Body,
+                RepliesCount = p.Replies.Count(),
                 Student = BuildStudentForPost(p),
                 StudentId = p.StudentId,
                 Created = p.Created

@@ -4,8 +4,6 @@ using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
 using SchoolBoard.Models.PostReplyModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace SchoolBoard.MVC.Controllers
@@ -14,8 +12,9 @@ namespace SchoolBoard.MVC.Controllers
     {
         private readonly IPost _postService;
         private readonly UserManager<ApplicationUser> _userManager;
-        public ReplyController(IPost postService)
+        public ReplyController(IPost postService, UserManager<ApplicationUser> userManager)
         {
+            _userManager = userManager;
             _postService = postService;
         }
         public async Task<IActionResult> Create(int id)
@@ -30,12 +29,36 @@ namespace SchoolBoard.MVC.Controllers
                 PostBody = post.Body,
 
                 AuthorId = user.Id,
-                AuthorName = user.Name,
+                AuthorName = User.Identity.Name,
+                ImgUrl = user.ImageUrl,
                 StudentName = post.Student.Name,
+                StudentId = post.StudentId,
                 Created = DateTime.Now,
                 StudentImgUrl = post.Student.ImgUrl
             };
             return View(model);
         }
+        [HttpPost]
+        public async Task<IActionResult> AddReply(ReplyModel model)
+        {
+            var userId = _userManager.GetUserId(User);
+            var user = await _userManager.FindByIdAsync(userId);
+            var reply = BuildReplyEntity(model, user);
+            await _postService.AddReply(reply);
+            return RedirectToAction("Index", "Post", new { id = model.PostId });
+        }
+
+        private PostReply BuildReplyEntity(ReplyModel model, ApplicationUser user)
+        {
+            var post = _postService.GetById(model.PostId);
+            return new PostReply
+            {
+                Post = post,
+                Body = model.Body,
+                Created = model.Created,
+                Instructor = user
+            };
+        }
     }
+
 }

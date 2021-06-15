@@ -31,6 +31,11 @@ namespace SchoolBoard.Services
             _context.Add(reply);
             await _context.SaveChangesAsync();
         }
+        public async Task DeleteReply(PostReply reply)
+        {
+            _context.Remove(reply);
+            await _context.SaveChangesAsync();
+        }
 
         public Task Delete(int id)
         {

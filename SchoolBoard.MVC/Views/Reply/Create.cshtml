@@ -6,14 +6,14 @@
             Reply | @Model.PostTitle
         </div>
         <span id="headingBtn">
-            <a asp-controller="Post" asp-action="Index" asp-route-id="@Model.PostId" class="btn btn-back">
+            <a style="color: darkkhaki" asp-controller="Post" asp-action="Index" asp-route-id="@Model.PostId" class="btn btn-back">
                 Back to Post
             </a>
         </span>
     </div>
     <div class="row">
         <div id="Reply">
-            <h3 style="color:ghostwhite">
+            <h3 style="color:ghostwhite; text-decoration:underline;">
                 @Model.PostTitle
             </h3>
             <p style="color:ghostwhite">
@@ -31,7 +31,12 @@
                 <div class="form-group">
                     <label asp-for="Body">Submit a Reply</label>
                     <textarea asp-for="Body" rows="20" class="form-control" placeholder="Reply..."></textarea>
+                    <span asp-validation-for="Body" class="text-danger"></span>
                 </div>
+                <button style="color: darkkhaki" type="submit" id="replySubmitBtn" class="btn btn-submitPost">Submit Reply</button>
+                <input asp-for="AuthorId" type="hidden" />
+                <input asp-for="PostId" type="hidden" />
+                <input asp-for="StudentId" type="hidden" />
             </form>
         </div>
     </div>

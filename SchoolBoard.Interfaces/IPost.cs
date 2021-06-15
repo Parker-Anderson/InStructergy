@@ -19,5 +19,6 @@ namespace SchoolBoard.Interfaces
         Task Delete(int id);
         Task Edit(int id, string body);
         Task AddReply(PostReply reply);
+        Task DeleteReply(PostReply reply);
     }
 }
