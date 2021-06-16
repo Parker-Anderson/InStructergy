@@ -1,6 +1,6 @@
 # SchoolBoard
 ## Project Description
-A message board-like collaboration tool for educators.
+A message board and collaboration tool for educators.
 SchoolBoard is a forum that allows teachers to communicate and work together for the students they share.
 ##
 
