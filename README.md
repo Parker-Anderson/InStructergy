@@ -13,7 +13,7 @@ Follow the steps below to install and build the project:
 
 2. Navigate to the [main repository](https://github.com/Parker-Anderson/SchoolBoard) and copy the text provided by clicking "Code".
 
-![CloneView](https://user-images.githubusercontent.com/58240410/117258630-2bf8ae80-ae1b-11eb-8dc3-166821034199.PNG)
+
 
 3. From the Windows command prompt, navigate to the directory in which you want to clone SchoolBoard.  Enter the command 'git clone' followed by the copied text.
 
