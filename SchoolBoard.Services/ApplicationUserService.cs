@@ -12,10 +12,33 @@ namespace SchoolBoard.Services
     public class ApplicationUserService : IApplicationUser
     {
         private readonly ApplicationDbContext _context;
-        public ApplicationUserService(ApplicationDbContext context)
+        private IStudent _studentService;
+        private ICourse _courseService;
+        public ApplicationUserService(ApplicationDbContext context, IStudent studentService, ICourse courseService)
         {
             _context = context;
+            _studentService = studentService;
+            _courseService = courseService;
         }
+
+        public async Task CreateCourse(int id, string name, IEnumerable<Student> students, ApplicationUser instructor)
+        {
+            var newCourse = new Course();
+            var course = _courseService.Create(newCourse);
+            await  _context.SaveChangesAsync();
+
+        }
+
+        public Task CreateInstructorAccount(string id, string name, IEnumerable<Course> courses)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateStudent(int id, string name, IEnumerable<Course> courses)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<ApplicationUser> GetAllUsers()
         {
             return _context.ApplicationUsers;
@@ -33,6 +56,16 @@ namespace SchoolBoard.Services
             user.ImageUrl = uri.AbsoluteUri;
             _context.Update(user);
             await _context.SaveChangesAsync();
+        }
+
+        public Task UpdateCourse(int id, string name, IEnumerable<Student> students, ApplicationUser instructor)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task UpdateStudent(int id, string name, IEnumerable<Course> courses)
+        {
+            throw new NotImplementedException();
         }
     }
 }
