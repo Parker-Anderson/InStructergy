@@ -13,5 +13,11 @@ namespace SchoolBoard.Interfaces
 
         Task SetProfileImage(string id, Uri uri);
         // TODO add Tasks for administrative functions here.
+
+        Task CreateInstructorAccount(string id, string name, IEnumerable<Course> courses);
+        Task CreateCourse(int id, string name, IEnumerable<Student> students, ApplicationUser instructor);
+        Task CreateStudent(int id, string name, IEnumerable<Course> courses);
+        Task UpdateCourse(int id, string name, IEnumerable<Student> students, ApplicationUser instructor);
+        Task UpdateStudent(int id, string name, IEnumerable<Course> courses);
     }
 }
