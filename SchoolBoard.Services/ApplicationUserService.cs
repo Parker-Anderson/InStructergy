@@ -25,18 +25,23 @@ namespace SchoolBoard.Services
         {
             var newCourse = new Course();
             var course = _courseService.Create(newCourse);
-            await  _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
         }
 
-        public Task CreateInstructorAccount(string id, string name, IEnumerable<Course> courses)
+        public async Task CreateInstructorAccount(string id, string name, IEnumerable<Course> courses)
         {
-            throw new NotImplementedException();
+            var person = new ApplicationUser();
+            var newInstructor = _context.Add(person);
+            await _context.SaveChangesAsync();
+
         }
 
-        public Task CreateStudent(int id, string name, IEnumerable<Course> courses)
+        public async Task CreateStudent(int id, string name, IEnumerable<Course> courses)
         {
-            throw new NotImplementedException();
+            var person = new Student();
+            var student = _studentService.Create(person);
+            await _context.SaveChangesAsync();
         }
 
         public IEnumerable<ApplicationUser> GetAllUsers()
@@ -47,7 +52,7 @@ namespace SchoolBoard.Services
         public ApplicationUser GetById(string id)
         {
             return GetAllUsers().FirstOrDefault(u => u.Id == id);
-                
+
         }
 
         public async Task SetProfileImage(string id, Uri uri)
