@@ -1,0 +1,13 @@
+D:\SchoolBoard\SchoolBoard.Data\bin\Debug\netcoreapp3.1\SchoolBoard.Data.deps.json
+D:\SchoolBoard\SchoolBoard.Data\bin\Debug\netcoreapp3.1\SchoolBoard.Data.runtimeconfig.json
+D:\SchoolBoard\SchoolBoard.Data\bin\Debug\netcoreapp3.1\SchoolBoard.Data.runtimeconfig.dev.json
+D:\SchoolBoard\SchoolBoard.Data\bin\Debug\netcoreapp3.1\SchoolBoard.Data.dll
+D:\SchoolBoard\SchoolBoard.Data\bin\Debug\netcoreapp3.1\SchoolBoard.Data.pdb
+D:\SchoolBoard\SchoolBoard.Data\obj\Debug\netcoreapp3.1\SchoolBoard.Data.csproj.AssemblyReference.cache
+D:\SchoolBoard\SchoolBoard.Data\obj\Debug\netcoreapp3.1\SchoolBoard.Data.AssemblyInfoInputs.cache
+D:\SchoolBoard\SchoolBoard.Data\obj\Debug\netcoreapp3.1\SchoolBoard.Data.AssemblyInfo.cs
+D:\SchoolBoard\SchoolBoard.Data\obj\Debug\netcoreapp3.1\SchoolBoard.Data.csproj.CoreCompileInputs.cache
+D:\SchoolBoard\SchoolBoard.Data\obj\Debug\netcoreapp3.1\SchoolBoard.Data.dll
+D:\SchoolBoard\SchoolBoard.Data\obj\Debug\netcoreapp3.1\SchoolBoard.Data.pdb
+D:\SchoolBoard\SchoolBoard.Data\obj\Debug\netcoreapp3.1\SchoolBoard.Data.genruntimeconfig.cache
+D:\SchoolBoard\SchoolBoard.Data\obj\Debug\netcoreapp3.1\SchoolBoard.Data.GeneratedMSBuildEditorConfig.editorconfig

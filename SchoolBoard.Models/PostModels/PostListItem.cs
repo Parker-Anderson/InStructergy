@@ -1,8 +1,6 @@
 ﻿using SchoolBoard.Data.DataModels;
 using SchoolBoard.Models.Student;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SchoolBoard.Models.PostModels
 {

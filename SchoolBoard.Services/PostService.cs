@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.EntityFrameworkCore;
 using SchoolBoard.Data;
 using SchoolBoard.Data.DataModels;
 using SchoolBoard.Interfaces;
